@@ -1,0 +1,180 @@
+@media screen and (max-width: 750px) {
+  .content {
+    display: block !important;
+    padding: 0 !important;
+  }
+  .tag-btns {
+    font-size: 12px !important;
+    width: 100px !important;
+    margin-right: 5px !important;
+    margin-top: 6px !important;
+  }
+  .filter-tags {
+    width: auto !important;
+  }
+  .list-tag {
+    font-size: 14px !important;
+    padding: 20px 0 !important;
+  }
+  .list-items {
+    width: auto !important;
+  }
+  .no-list  {
+    width: auto !important;
+    .title {
+      font-size: 14px !important;
+    }
+    .desc {
+      font-size: 12px !important;
+    }
+  }
+}
+
+.tag-btns {
+  width: 120px;
+  text-align: left;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+  color: $globalBackground;
+}
+.tag-img {
+  width: 18px;
+  vertical-align: sub;
+  margin-right: 6px;
+}
+.selected-tag {
+  background-color: $fontIconBtn;
+}
+.selected-follower {
+  color: $fontIconBtn;
+}
+.activity-cnt {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px;
+  .cnt-title {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+}
+.content {
+  display: flex;
+  padding: 0 60px;
+  justify-content: space-between;
+  .filter-tags {
+    width: 260px;
+    text-align: left;
+    .title {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+  .act-list {
+    max-height: 60vh;
+    overflow-y: scroll;
+    position: relative;
+    .list-tag {
+      font-size: 16px;
+      font-weight: 600;
+      padding-bottom: 25px;
+      text-align: left;
+      position: sticky;
+      top: 0;
+      z-index: 9;
+      color: #fff;
+      background: $globalBackground;
+      span {
+        margin-right: 40px;
+        cursor: pointer;
+      }
+    }
+    .no-list {
+      width: 380px;
+      padding: 50px 0;
+      overflow: hidden;
+      text-align: center;
+      color: #fff;
+
+      .title {
+        font-size: 32px;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      .desc {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+      
+    }
+    .list-items {
+      width: 380px;
+      overflow: hidden;
+      .list-item {
+        border: 1px solid #dfdfdf;
+        display: flex;
+        padding: 8px 16px;
+        margin-bottom: 25px;
+        border-radius: 8px;
+        background-color: #fff;
+        color: $globalBackground;
+        .item-avatar {
+          position: relative;
+          width: 60px;
+          height: 60px;
+          padding: 5px;
+          :deep .avatar {
+            width: 60px;
+          height: 60px;
+            border-radius: 50%;
+            border: 1px solid #dfdfdf;
+          }
+          .img-icon {
+            position: absolute;
+            left: -4px;
+            top: 4px;
+            border: 1px solid #dfdfdf;
+            border-radius: 50%;
+            padding: 4px;
+            background: #fff;
+          }
+        }
+        .item-info {
+          width: 300px;
+          text-align: left;
+          margin-left: 14px;
+          font-size: 12px;
+          font-weight: 500;
+          .name {
+            font-weight: 600;
+            margin-bottom: 4px;
+          }
+
+          .user {
+            font-weight: 600;
+          }
+          .name,.user {
+            width: 200px;
+            overflow: hidden;
+            display: inline-block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            vertical-align: top;
+          }
+          :deep .likedByUser {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin: 0 4px;
+          }
+        }
+      }
+    }
+  }
+}

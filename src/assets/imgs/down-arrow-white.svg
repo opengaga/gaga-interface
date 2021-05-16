@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12.827" height="7.403" viewBox="0 0 12.827 7.403">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fcf7ee;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="箭头" transform="translate(1.413 6.403) rotate(-90)">
+    <path id="路径_11" data-name="路径 11" class="cls-1" d="M4.99,0,.2,4.49a.616.616,0,0,0-.006.9L4.99,10" transform="translate(0 0)"/>
+  </g>
+</svg>

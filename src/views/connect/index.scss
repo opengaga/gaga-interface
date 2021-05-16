@@ -1,0 +1,65 @@
+@media screen and (max-width: 750px) {
+  .connect-wrap {
+    width: 94%;
+    padding: 20px;
+    display: block !important;
+  }
+  .connect-left {
+    display: none;
+  }
+  .connect-right {
+    width: 100%;
+    padding-top: 0 !important;
+    margin: 0 !important;
+    .title {
+      font-size: 14px !important;
+    }
+    .desc {
+      width: 100% !important;
+      font-size: 12px !important;
+    }
+  }
+  .connect-bottom {
+    width: 100%;
+    position: static !important;
+    white-space: normal !important;
+  }
+}
+.connect-wrap {
+  display: flex;
+}
+.connect-left {
+  width: 340px;
+  height: 560px;
+  // background: url('~@/assets/imgs/b5.png') center center no-repeat;
+  background-color: $fontIconBtn;
+  background-size: cover;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.connect-right {
+  height: 560px;
+  margin-left: 100px;
+  color: #fff;
+  position: relative;
+  padding-top: 60px;
+  .title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .desc {
+    width: 360px;
+    margin-bottom: 30px;
+    .explain {
+      color: $fontIconBtn;
+    }
+  }
+  .connect-bottom {
+    position: absolute;
+    bottom: 60px;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+}

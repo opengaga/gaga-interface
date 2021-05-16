@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30.001" height="30" viewBox="0 0 30.001 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        opacity: 0;
+      }
+
+      .cls-2 {
+        fill: #636364;
+      }
+    </style>
+  </defs>
+  <g id="组_2955" data-name="组 2955" transform="translate(17397 8818)">
+    <rect id="矩形_2219" data-name="矩形 2219" class="cls-1" width="30" height="30" transform="translate(-17397 -8818)"/>
+    <path id="关闭_1_" data-name="关闭 (1)" class="cls-2" d="M79.7,63.9a15,15,0,1,0,15,15A15,15,0,0,0,79.7,63.9Zm6.749,19.821a1.363,1.363,0,1,1-1.927,1.927L79.7,80.829l-4.822,4.82a1.363,1.363,0,0,1-1.927-1.927L77.773,78.9l-4.822-4.82a1.363,1.363,0,0,1,1.927-1.927L79.7,76.975l4.819-4.826a1.363,1.363,0,0,1,1.927,1.927L81.627,78.9Z" transform="translate(-17461.699 -8881.9)"/>
+  </g>
+</svg>

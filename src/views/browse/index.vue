@@ -1,0 +1,92 @@
+<template>
+  <div class="browse-container">
+    <div class="top-imgs">
+      <div
+        class="wrap"
+        v-for="(item, idx) in userData"
+        :style="{ background: `url(${item.hot_url})` }"
+        :key="idx"
+      >
+        <div class="wrap-title">{{ item.hot_title }}</div>
+        <div class="wrap-headline"></div>
+      </div>
+    </div>
+    <div class="sellers-wrap">
+      <topsellers />
+      <!-- <div class="hotbids-wrap">
+        <div class="item-title"> Hot bids <img src="@/assets/imgs/hotbids.svg" /> </div>
+        <Bids />
+      </div> -->
+      <div class="hotbids-wrap">
+        <div class="item-title"> Hot collections <img src="@/assets/imgs/hotcollect.svg" /> </div>
+        <Collections />
+      </div>
+      <Expolre />
+    </div>
+  </div>
+  <placeBid v-if="showPlaceBid" @closeBid="showPlaceBid = false" />
+  <report v-if="showReport" @closeReport="showReport = false" />
+  <purchase v-if="showPurchase" @closePurchase="showPurchase = false" />
+</template>
+<script lang="ts">
+  //import Bids from './bids.vue'
+  import Collections from './collections.vue'
+  import { defineComponent, ref } from 'vue'
+  import Expolre from './expolre.vue'
+  import topsellers from './topsellers.vue'
+  import placeBid from '@/components/modals/placeBid.vue'
+  import report from '@/components/modals/report.vue'
+  import purchase from '@/components/modals/purchase.vue'
+  import bus from '@/bus'
+
+  import { useApi } from '@/hooks/useApi'
+  export default defineComponent({
+    name: 'Browse',
+    components: {
+      //Bids,
+      Collections,
+      Expolre,
+      topsellers,
+      placeBid,
+      report,
+      purchase
+    },
+
+    setup() {
+      const api = useApi()
+      let userData = ref<any>([])
+      let showPlaceBid = ref<boolean>(false)
+      let showReport = ref<boolean>(false)
+      let showPurchase = ref<boolean>(false)
+      bus.on('showPlaceBid', () => {
+        showPlaceBid.value = true
+      })
+      bus.on('showPurchase', () => {
+        showPurchase.value = true
+      })
+      bus.on('showReport', () => {
+        showReport.value = true
+      })
+      api
+        .getHotList()
+        .then((res: any) => {
+          if (res?.list) {
+            userData.value = res.list
+          }
+        })
+        .catch((err) => {
+          console.log(err.msg)
+        })
+
+      return {
+        userData,
+        showPlaceBid,
+        showReport,
+        showPurchase
+      }
+    }
+  })
+</script>
+<style scoped lang="scss">
+  @import './index.scss';
+</style>

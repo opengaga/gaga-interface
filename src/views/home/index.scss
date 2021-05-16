@@ -1,0 +1,188 @@
+$border: 1px solid rgba(187, 187, 187, 100);
+
+@media screen and (max-width: 750px) {
+  .banner-wrap {
+    height: 125px !important;
+    padding-top: 40px !important;
+    .title {
+      font-size: 14px !important;
+    }
+    .info {
+      font-size: 12px !important;
+    }
+    .btn-items a{
+      font-size: 12px !important;
+      width: 150px !important;
+      line-height: 30px !important;
+    }
+  }
+  .account-wrap {
+    margin-top: 170px !important;
+    padding: 40px 12% 10px !important;
+    .title {
+      font-size: 14px !important;
+    }
+    .desc {
+      font-size: 12px !important;
+      margin: 20px 0 !important;
+      line-height: 24px !important;
+    }
+    .connect-balance {
+      padding: 20px !important;
+      .num {
+        font-size: 18px !important;
+      }
+    }
+  }
+  .about-concat {
+    line-height: 30px !important;
+    font-size: 12px !important;
+    img {
+      width: 30px;
+      margin: 0 !important;
+    }
+  }
+  
+  .connect-wrap {
+    width: 100% !important;
+    padding: 4px !important;
+    font-size: 12px !important;
+    padding: 4
+    px !important;
+    margin-bottom: 100px !important;
+    .cnt-text {
+      display: none;
+    }
+    .link {
+      flex: 1;
+      line-height: 20px !important;
+      margin: 0 0 0 10px !important;
+    }
+  }
+}
+
+.banner-wrap {
+  width: 100%;
+  height: 500px;
+  padding-top: 70px;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  box-sizing: border-box;
+  background: url('~@/assets/imgs/banner.svg') center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  margin: auto;
+
+  .title {
+    color: #fff;
+    font-size: 38px;
+    font-family: Trajan Pro;
+    white-space: nowrap;
+  }
+  .info {
+    color: #fff;
+    font-size: 25px;
+  }
+  .btn-items {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    a {
+      width: 175px;
+      color: #222;
+      font-size: 20px;
+      background-color: #fff;
+      line-height: 44px;
+      &:nth-child(2) {
+        background-color: $fontIconBtn;
+      }
+    }
+  }
+}
+
+.account-wrap {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+  color: #fff;
+  padding: 40px 0;
+  margin-top: 500px;
+  .title {
+    font-weight: 600;
+    font-size: 30px;
+  }
+  .desc {
+    font-size: 18px;
+    line-height: 37px;
+    margin: 70px 0;
+  }
+  .connect-wrap {
+    width: 80%;
+    margin: 0 auto 160px;
+    background: #ffffff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 50px;
+    display: flex;
+    font-size: 18px;
+    color: #222;
+    padding: 10px 10px 10px 30px;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    .link {
+      line-height: 38px;
+      cursor: pointer;
+      display: inline-block;
+      color: $globalBackground;
+      background-color: $fontIconBtn;
+      padding: 4px 30px;
+      border-radius: 30px;
+      margin: 0 10px;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.35);
+    }
+  }
+  .connect-balance {
+    width: 90%;
+    display: flex;
+    padding: 30px 10%;
+    justify-content: space-between;
+    align-items: center;
+    border: $border;
+    margin: 60px auto;
+    background-color: #fff;
+    color: #252525;
+    .title {
+      display: block;
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+    .line {
+      width: 45px;
+      height: 1px;
+      display: block;
+      margin: 0 auto 18px;
+      border-top: 2px solid $globalBackground;
+    }
+    .num {
+      font-size: 30px;
+      font-weight: 600;
+      color: $warnTip;
+    }
+  }
+  .about-concat {
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 20px;
+    padding: 0 30px;
+    line-height: 50px;
+    display: inline-block;
+    margin: auto;
+    .anticon-right {
+      margin-left: 50px;
+    }
+  }
+}

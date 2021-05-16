@@ -1,0 +1,74 @@
+@media screen and (max-width: 750px) {
+  .profile-wrap {
+    width: 90% !important;
+    padding: 10px !important;
+    flex-direction: column-reverse;
+  }
+  .profile-left {
+    padding-right: 0 !important;
+    padding-top: 30px;
+    .title {
+      display: none;
+      
+    }
+  }
+}
+
+.profile-container {
+  width: 100%;
+  color: #fff;
+  .profile-wrap {
+    width: 800px;
+    margin: auto;
+    text-align: left;
+    display: flex;
+    padding: 60px 20px;
+    justify-content: space-between;
+    align-items: center;
+    .profile-left {
+      padding-right: 50px;
+    }
+    .title {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .form-item {
+      margin-bottom: 20px;
+      .name {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      input {
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid #dfdfdf;
+      }
+    }
+    .form-avatar {
+      width: 250px;
+      .avatar {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: 1px solid #dfdfdf;
+        margin: 20px auto;
+        display: block;
+      }
+    }
+  }
+}
+.submit-btn {
+  width: 90%;
+  display: block;
+  margin: 30px auto;
+}
+:deep .ant-upload.ant-upload-select-picture-card {
+  display: contents !important;
+}
+:deep .ant-upload.ant-upload-select-picture-card > .ant-upload {
+  display: block;
+}

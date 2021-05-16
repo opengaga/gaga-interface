@@ -1,0 +1,110 @@
+@media screen and (max-width: 750px) {
+  .top-imgs .wrap {
+    width: 92px !important;
+    height: 110px !important;
+    padding: 8px !important;
+  }
+  .browse-container * {
+    font-size: 12px !important;
+    .title, .item-title {
+      font-size: 14px !important;
+    }
+  }
+}
+
+.browse-container {
+  width: 100%;
+  margin: auto;
+  padding: 20px 0;
+  text-align: left;
+  color: #fff;
+}
+.top-imgs {
+  width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap;
+  .wrap {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    margin-right: 20px;
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #ddd;
+    color: $globalBackground;
+    padding: 20px;
+    &-title {
+      font-size: 20px;
+    }
+  }
+}
+
+.dropdown-wrap {
+  margin-top: 20px;
+
+  .menu-link {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 30px;
+  }
+}
+.com-link {
+  display: block;
+  padding: 6px 10px;
+  background-color: #fff;
+  a {
+    color: $globalBackground;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+.sellers-items {
+  width: 100%;
+  display: flex;
+  max-height: 210px;
+  overflow-x: scroll;
+  flex-wrap: wrap;
+  margin: 40px auto;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.item-title {
+  font-size: 20px;
+  font-weight: 600;
+  img {
+    width: 14px;
+    margin-left: 6px;
+  }
+}
+
+.hotbids-wrap {
+  margin: 40px auto;
+  .item-title {
+    width: 100%;
+    overflow-x: scroll;
+    margin: 20px 0;
+    white-space: nowrap;
+  }
+}
+
+.expolre-btns {
+  border-radius: 4px;
+  margin-left: 14px;
+  border: none;
+  &:hover {
+    color: #333;
+  }
+  img {
+    width: 18px;
+    vertical-align: sub;
+    margin-right: 8px;
+  }
+}
+.selected-expolre {
+  background-color: $fontIconBtn;
+  color: $globalBackground;
+}

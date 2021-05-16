@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #707070;
+        opacity: 0;
+      }
+
+      .cls-2 {
+        fill: #f8d12e;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="组_2988" data-name="组 2988" transform="translate(18989 8721)">
+    <g id="矩形_2227" data-name="矩形 2227" class="cls-1" transform="translate(-18989 -8721)">
+      <rect class="cls-3" width="30" height="30"/>
+      <rect class="cls-4" x="0.5" y="0.5" width="29" height="29"/>
+    </g>
+    <path id="闪电" class="cls-2" d="M186.415,102.792h-5.682l5.11-6.456A.207.207,0,0,0,185.68,96h-9.892a.2.2,0,0,0-.178.1l-6.683,11.543a.206.206,0,0,0,.178.31h4.5L171.3,117.18a.206.206,0,0,0,.343.2l14.917-14.233A.205.205,0,0,0,186.415,102.792Z" transform="translate(-19151.898 -8813)"/>
+  </g>
+</svg>

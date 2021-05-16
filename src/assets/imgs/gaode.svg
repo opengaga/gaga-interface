@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        opacity: 0;
+      }
+
+      .cls-2 {
+        fill: #f8d12e;
+      }
+
+      .cls-3 {
+        fill: #12161c;
+      }
+    </style>
+  </defs>
+  <g id="组_2493" data-name="组 2493" transform="translate(-305 -3691)">
+    <rect id="矩形_2082" data-name="矩形 2082" class="cls-1" width="48" height="48" transform="translate(305 3691)"/>
+    <g id="组_1640" data-name="组 1640" transform="translate(305 3691)">
+      <path id="路径_5275" data-name="路径 5275" class="cls-2" d="M0,0H48V48H0Z" transform="translate(0)"/>
+      <path id="纸飞机" class="cls-3" d="M30.521.172,2.51,10.951C.6,11.719.617,12.787,2.162,13.223L9.31,15.495,25.977,5.017c.788-.472,1.509-.207.913.337L13.4,17.456l-.462,7.4a1.867,1.867,0,0,0,1.458-.731l3.465-3.372L25.126,26.1c1.338.737,2.3.348,2.635-1.245L32.544,2.449C33.032.488,31.807-.4,30.521.172Z" transform="translate(7.31 10.435)"/>
+    </g>
+    <g id="组_2445" data-name="组 2445" transform="translate(305 3691)">
+      <path id="路径_5275-2" data-name="路径 5275" class="cls-2" d="M0,0H48V48H0Z" transform="translate(0)"/>
+      <path id="纸飞机-2" data-name="纸飞机" class="cls-3" d="M30.521.172,2.51,10.951C.6,11.719.617,12.787,2.162,13.223L9.31,15.495,25.977,5.017c.788-.472,1.509-.207.913.337L13.4,17.456l-.462,7.4a1.867,1.867,0,0,0,1.458-.731l3.465-3.372L25.126,26.1c1.338.737,2.3.348,2.635-1.245L32.544,2.449C33.032.488,31.807-.4,30.521.172Z" transform="translate(6.962 11.001)"/>
+    </g>
+  </g>
+</svg>

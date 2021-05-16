@@ -1,0 +1,58 @@
+{
+  "name": "vue3-vvm",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^6.0.1",
+    "@ethersproject/bytes": "^5.0.11",
+    "@ethersproject/keccak256": "^5.0.9",
+    "@web3-react/abstract-connector": "^6.0.7",
+    "ant-design-vue": "^2.1.0",
+    "axios": "^0.21.1",
+    "core-js": "^3.8.3",
+    "ethers": "^5.1.0",
+    "jdenticon": "^3.1.0",
+    "less": "^4.1.1",
+    "less-loader": "^8.0.0",
+    "mitt": "^2.1.0",
+    "mobile-device-detect": "^0.4.3",
+    "tiny-invariant": "^1.1.0",
+    "tiny-warning": "^1.0.3",
+    "vue": "next",
+    "vue-router": "next",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "@vue/cli-plugin-babel": "~5.0.0-alpha.8",
+    "@vue/cli-plugin-eslint": "~5.0.0-alpha.8",
+    "@vue/cli-plugin-router": "~5.0.0-alpha.8",
+    "@vue/cli-plugin-typescript": "~5.0.0-alpha.8",
+    "@vue/cli-plugin-vuex": "~5.0.0-alpha.8",
+    "@vue/cli-service": "~5.0.0-alpha.8",
+    "@vue/compiler-sfc": "^3.0.4",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "babel-plugin-import": "^1.13.3",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-vue": "^7.9.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "sass": "^1.32.7",
+    "sass-loader": "^11.0.1",
+    "style-resources-loader": "^1.4.1",
+    "typescript": "^4.2.4",
+    "vue-cli-plugin-style-resources-loader": "~0.1.5"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  }
+}
