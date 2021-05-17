@@ -58,7 +58,7 @@
           font-weight: bold;
         }
         .user-number {
-          color: $fontIconBtn;
+          color: #246cf6;
           width: 150px;
           display: inline-block;
           overflow: hidden;

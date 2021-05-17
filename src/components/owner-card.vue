@@ -65,7 +65,7 @@
       }
       &-desc {
         font-size: 12px;
-        color: $fontIconBtn;
+        color: #246cf6;
 
         overflow: hidden;
         text-overflow: ellipsis;

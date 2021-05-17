@@ -44,10 +44,10 @@
   margin-right: 6px;
 }
 .selected-tag {
-  background-color: $fontIconBtn;
+  background: $fontIconBtn;
 }
 .selected-follower {
-  color: $fontIconBtn;
+  color: #246CF6;
 }
 .activity-cnt {
   max-width: 1100px;
@@ -88,7 +88,6 @@
       top: 0;
       z-index: 9;
       color: #fff;
-      background: $globalBackground;
       span {
         margin-right: 40px;
         cursor: pointer;

@@ -145,7 +145,7 @@
         }
       }
       .mount-num {
-        color: $fontIconBtn;
+        color: #246cf6;
         margin-right: 3px;
       }
       .like-icon {

@@ -26,7 +26,7 @@
     padding: 4px;
     margin: 20px 0;
     color: $globalBackground;
-    background-color: $fontIconBtn;
+    background: $fontIconBtn;
     .wallet-icon {
       width: 36px;
       height: 36px;

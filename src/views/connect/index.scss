@@ -32,7 +32,7 @@
   width: 340px;
   height: 560px;
   // background: url('~@/assets/imgs/b5.png') center center no-repeat;
-  background-color: $fontIconBtn;
+  background: $fontIconBtn;
   background-size: cover;
   img {
     width: 100%;
@@ -53,7 +53,7 @@
     width: 360px;
     margin-bottom: 30px;
     .explain {
-      color: $fontIconBtn;
+      color: #246CF6;
     }
   }
   .connect-bottom {

@@ -32,7 +32,7 @@
     font-size: 12px;
     font-weight: bold;
     line-height: 16px;
-    color: $fontIconBtn;
+    color: #246cf6;
 
     :deep svg {
       margin-right: 16px;

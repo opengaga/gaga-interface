@@ -93,7 +93,7 @@
     }
   }
   .top-filter {
-    color: $fontIconBtn;
+    color: #246cf6;
   }
   .sellers-items {
     width: 100%;

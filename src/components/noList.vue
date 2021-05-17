@@ -46,7 +46,7 @@
     color: #fff;
     .thunder {
       font-size: 80px;
-      color: $fontIconBtn;
+      color: #246cf6;
       margin-bottom: 30px;
     }
 

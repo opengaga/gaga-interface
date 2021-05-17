@@ -67,7 +67,7 @@
       font-size: 12px;
       font-weight: bold;
       line-height: 16px;
-      color: $fontIconBtn;
+      color: #246cf6;
     }
   }
 </style>

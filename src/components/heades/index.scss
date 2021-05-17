@@ -54,13 +54,16 @@
       color: #fff;
       background-color: transparent;
     }
+    img {
+      height: 30px;
+    }
   }
   
   .menu-lists {
     display: none;
     .menu {
       font-size: 30px;
-      color: $fontIconBtn;
+      color: #246CF6;
     }
   }
   .lists {
@@ -104,5 +107,5 @@
 }
 
 .selectedHeaderLink {
-  color: $fontIconBtn !important;
+  color: #246CF6 !important;
 }

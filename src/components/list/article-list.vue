@@ -58,7 +58,7 @@
       line-height: 40px;
       border-radius: 50%;
       text-align: center;
-      color: $fontIconBtn;
+      color: #246cf6;
       border: 1px solid $fontIconBtn;
     }
     .item-right {
@@ -67,7 +67,7 @@
       .item-title {
         font-size: 20px;
         margin-bottom: 4px;
-        color: $fontIconBtn;
+        color: #246cf6;
       }
       .item-time {
         margin-bottom: 16px;

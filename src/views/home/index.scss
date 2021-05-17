@@ -141,7 +141,7 @@ $border: 1px solid rgba(187, 187, 187, 100);
       cursor: pointer;
       display: inline-block;
       color: $globalBackground;
-      background-color: $fontIconBtn;
+      background: $fontIconBtn;
       padding: 4px 30px;
       border-radius: 30px;
       margin: 0 10px;
@@ -185,6 +185,9 @@ $border: 1px solid rgba(187, 187, 187, 100);
     line-height: 50px;
     display: inline-block;
     margin: auto;
+    img {
+      height: 50px;
+    }
     .anticon-right {
       margin-left: 50px;
     }

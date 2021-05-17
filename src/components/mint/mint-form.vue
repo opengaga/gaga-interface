@@ -202,7 +202,7 @@
       .form-item-left {
         width: 330px;
         .title {
-          color: $fontIconBtn;
+          color: #246cf6;
           font-weight: bold;
           margin-bottom: 10px;
         }
