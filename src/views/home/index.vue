@@ -3,8 +3,8 @@
     <div class="title">THE LARGEST NFT MARKETPLACE ON BSC</div>
     <div class="info">buy,sell,and discover rare digital items</div>
     <div class="btn-items">
-      <router-link :to="{ path: 'browse' }">Browse</router-link>
-      <router-link :to="{ path: 'create' }">Create</router-link>
+      <router-link to="browse">Browse</router-link>
+      <router-link to="create">Create</router-link>
     </div>
   </div>
   <div class="account-wrap">

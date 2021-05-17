@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
   <defs>
     <style>
       .cls-1 {
@@ -7,9 +7,13 @@
       }
 
       .cls-2 {
-        fill: #f8d12e;
+        fill: url(#linear-gradient);
       }
     </style>
+    <linearGradient id="linear-gradient" x1="0.088" y1="0.178" x2="0.889" y2="0.882" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#db30ff"/>
+      <stop offset="1" stop-color="#4768ff"/>
+    </linearGradient>
   </defs>
   <g id="组_2952" data-name="组 2952" transform="translate(18596 8927)">
     <rect id="矩形_2219" data-name="矩形 2219" class="cls-1" width="48" height="48" transform="translate(-18596 -8927)"/>

@@ -67,6 +67,14 @@
   ::-webkit-scrollbar-corner {
     background: #179a16;
   }
+  .ant-btn-primary {
+    color: #fff;
+    background: linear-gradient(138deg, #db30ff 0%, #4768ff 100%);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    opacity: 1;
+    border: none;
+    border-radius: 24px;
+  }
 
   .website-container {
     width: 1500px;

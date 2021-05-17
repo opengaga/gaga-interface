@@ -63,40 +63,44 @@ $border: 1px solid rgba(187, 187, 187, 100);
 
 .banner-wrap {
   width: 100%;
-  height: 500px;
-  padding-top: 70px;
+  height: 350px;
+  padding: 70px;
   position: absolute;
   top: 80px;
   left: 0;
   box-sizing: border-box;
   background: url('~@/assets/imgs/banner.svg') center center no-repeat;
   background-size: cover;
-  text-align: center;
+  text-align: left;
   margin: auto;
 
   .title {
+    max-width: 450px;
     color: #fff;
-    font-size: 38px;
-    font-family: Trajan Pro;
-    white-space: nowrap;
+    font-size: 34px;
   }
   .info {
     color: #fff;
-    font-size: 25px;
+    font-size: 20px;
+    padding-left: 10px;
+    border-left: 3px solid #4768ff;
   }
   .btn-items {
     margin-top: 70px;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     a {
-      width: 175px;
-      color: #222;
+      width: 150px;
+      color: #fff;
       font-size: 20px;
-      background-color: #fff;
-      line-height: 44px;
-      &:nth-child(2) {
-        background-color: $fontIconBtn;
+      border-radius: 30px;
+      text-align: center;
+      margin-right: 20px;
+      background: linear-gradient(138deg, #db30ff 0%, #4768ff 100%);
+      line-height: 36px;
+      &:nth-child(1) {
+        color: #333;
+        background: #fff !important;
       }
     }
   }
@@ -109,7 +113,7 @@ $border: 1px solid rgba(187, 187, 187, 100);
   margin: auto;
   color: #fff;
   padding: 40px 0;
-  margin-top: 500px;
+  margin-top: 400px;
   .title {
     font-weight: 600;
     font-size: 30px;
@@ -117,12 +121,12 @@ $border: 1px solid rgba(187, 187, 187, 100);
   .desc {
     font-size: 18px;
     line-height: 37px;
-    margin: 70px 0;
+    margin: 50px 0;
   }
   .connect-wrap {
     width: 80%;
     margin: 0 auto 160px;
-    background: #ffffff;
+    background: #fff;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
     border-radius: 50px;
     display: flex;

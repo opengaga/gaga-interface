@@ -1,4 +1,4 @@
-<svg id="组_2971" data-name="组 2971" xmlns="http://www.w3.org/2000/svg" width="132.253" height="132.252" viewBox="0 0 132.253 132.252">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
   <defs>
     <style>
       .cls-1 {
@@ -7,23 +7,32 @@
       }
 
       .cls-2 {
-        fill: #f8d12e;
+        fill: url(#linear-gradient);
       }
 
       .cls-3 {
         fill: none;
-        stroke: #0b0e11;
+        stroke: #fff;
         stroke-linecap: round;
         stroke-miterlimit: 10;
-        stroke-width: 6px;
+        stroke-width: 2px;
       }
     </style>
+    <linearGradient id="linear-gradient" x1="0.114" y1="0.08" x2="0.883" y2="0.914" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#db30ff"/>
+      <stop offset="1" stop-color="#246df6"/>
+    </linearGradient>
   </defs>
-  <path id="路径_5359" data-name="路径 5359" class="cls-1" d="M0,0H132.253V132.253H0Z" transform="translate(0)"/>
-  <g id="组_2348" data-name="组 2348" transform="translate(29.922 30.142)">
-    <ellipse id="椭圆_11" data-name="椭圆 11" class="cls-2" cx="36" cy="35.5" rx="36" ry="35.5" transform="translate(-0.189 -0.102)"/>
-    <g id="箭头" transform="translate(43.384 49.774) rotate(180)">
-      <path id="路径_11" data-name="路径 11" class="cls-3" d="M14.074,28.206.558,15.541A1.739,1.739,0,0,1,.542,13L14.074,0" transform="translate(0)"/>
+  <g id="组_3894" data-name="组 3894" transform="translate(-192 -3673)">
+    <path id="路径_5359" data-name="路径 5359" class="cls-1" d="M0,0H48V48H0Z" transform="translate(192 3673)"/>
+    <g id="组_2349" data-name="组 2349" transform="translate(203 3684)">
+      <rect id="矩形_995" data-name="矩形 995" class="cls-1" width="26" height="26" transform="translate(26) rotate(90)"/>
+      <g id="组_2348" data-name="组 2348">
+        <circle id="椭圆_11" data-name="椭圆 11" class="cls-2" cx="13" cy="13" r="13"/>
+        <g id="箭头" transform="translate(17.631 19.776) rotate(180)">
+          <path id="路径_11" data-name="路径 11" class="cls-3" d="M7.031,14.092.279,7.764A.869.869,0,0,1,.271,6.5L7.031,0"/>
+        </g>
+      </g>
     </g>
   </g>
 </svg>

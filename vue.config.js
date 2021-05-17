@@ -11,11 +11,11 @@ module.exports = {
           // important extra layer for less-loader^6.0.0
           javascriptEnabled: true,
           modifyVars: {
-            '@primary-color': '#F8D12E',
-            '@processing-color': '#F8D12E',
+            '@primary-color': '#DB30FF',
+            '@processing-color': '#DB30FF',
             '@black': '#12161C',
-            '@link-color': '#F8D12E',
             '@btn-primary-color': '@black',
+            '@link-color': '#DB30FF',
             '@error-color': '#D81E06',
             '@border-color-base': '#8D8D8D',
             '@border-color-split': '#636364',

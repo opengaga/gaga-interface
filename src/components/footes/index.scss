@@ -37,11 +37,11 @@
   margin-top: 40px;
   padding: 20px 0;
   overflow: auto;
-  border-top: 1px dashed rgba(187, 187, 187, 100);
+  border-top: 1px dashed rgba(187, 187, 187, 1);
   .email-wrap {
     margin: 20px auto;
     border-radius: 30px;
-    border: 1px solid #f8d12e;
+    border: 1px solid #DB30FF;
     display: flex;
     padding: 6px;
     box-sizing: border-box;
@@ -58,8 +58,8 @@
     .link {
       cursor: pointer;
       display: inline-block;
-      border: 1px solid #f8d12e;
-      background: #f8d12e;
+      border: 1px solid #DB30FF;
+      background: linear-gradient(138deg, #db30ff 0%, #4768ff 100%);
       color: $globalBackground;
       font-size: 16px;
       padding: 0 20px;
@@ -73,7 +73,7 @@
     text-align: left;
     width: 100%;
     padding: 10px 40px 20px;
-    border-bottom: 1px dashed rgba(187, 187, 187, 100);
+    border-bottom: 1px dashed rgba(187, 187, 187, 1);
     justify-content: space-between;
     .email-info {
       flex: 1;
