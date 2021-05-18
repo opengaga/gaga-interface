@@ -2,6 +2,7 @@ import { computed, defineComponent } from 'vue'
 
 import { Image } from 'ant-design-vue'
 import { ImageProps } from 'ant-design-vue/lib/image'
+import { getIpfsUrl } from '@/utils/ipfs'
 
 // erc721 & erc1155 image
 // support url protocol: ipfs, http
@@ -11,11 +12,7 @@ const TokenImage = defineComponent({
   setup(props, context) {
     const url = computed(() => {
       if (props.src) {
-        if (props.src.startsWith('http')) {
-          return props.src
-        } else if (props.src.startsWith('ipfs')) {
-          return props.src.replace('ipfs://', 'https://ipfs.io/')
-        }
+        return getIpfsUrl(props.src)
       }
 
       return 'https://oktools.net/ph/300x200?t='

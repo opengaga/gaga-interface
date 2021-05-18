@@ -3,7 +3,7 @@
     <back-btns text="Manage collectible type" link="create" />
     <div class="page-title">Create multiple collectible</div>
     <div class="single-wrap">
-      <mint-form :isMulti="false" :state="form" @submit="submit" />
+      <mint-form :isMulti="true" :state="form" @submit="submit" />
       <div class="preview-wrap">
         <div class="preview-title">Preview</div>
         <div class="preview-info">

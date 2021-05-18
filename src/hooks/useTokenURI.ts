@@ -80,7 +80,7 @@ const useTokenURI = (
 
       method(BigNumber.from(tokenId.value))
         .then((data) => {
-          const url = getIpfsUrl(data.replace('ipfs://ipfs/', 'https://ipfs.io/ipfs/'))
+          const url = getIpfsUrl(data)
 
           return fetch(url)
         })
