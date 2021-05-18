@@ -101,7 +101,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/fllowing',
-    name: 'Fllowing',
+    name: 'Following',
     meta: {
       title: 'BACT'
     },

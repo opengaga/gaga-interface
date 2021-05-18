@@ -1,6 +1,6 @@
 <template>
   <div class="banner-wrap">
-    <div class="title">THE LARGEST NFT MARKETPLACE ON BSC</div>
+    <div class="title">THE LARGEST NFT MARKETPLACE ON ZSC</div>
     <div class="info">buy,sell,and discover rare digital items</div>
     <div class="btn-items">
       <router-link to="browse">Browse</router-link>
@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="account-wrap">
-    <div class="title">Meet BCAT-BlackCat Governance Token</div>
+    <div class="title">Meet GAGA-OpenGaga Governance Token</div>
     <div class="desc">
       We think that the best way to align platform development with customers' interests is to
       empower the ones who actively interact with protocol: creators and collectors
@@ -23,16 +23,16 @@
       <div>
         <span class="title">Your Balance</span>
         <span class="line"></span>
-        <span class="num">1000BCAT</span>
+        <span class="num">1000 GAGA</span>
       </div>
       <div>
         <span class="title">Available for claim</span>
         <span class="line"></span>
-        <span class="num">1000BCAT</span>
+        <span class="num">1000 GAGA</span>
       </div>
     </div>
     <router-link to="about" class="about-concat">
-      Learn more about BCAT token
+      Learn more about GAGA token
       <img class="anticon-right" src="@/assets/imgs/learn-arow.svg" alt="" />
     </router-link>
   </div>

@@ -124,7 +124,7 @@
           link: '/myItems'
         },
         {
-          name: 'Fllowing',
+          name: 'Following',
           link: '/fllowing'
         },
         {
