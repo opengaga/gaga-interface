@@ -130,7 +130,7 @@
         {
           name: 'Community',
           children: [
-            { link: '/about', name: 'BCAT Token' },
+            { link: '/about', name: 'GAGA Token' },
             { link: '/', name: 'Discussion' },
             { link: '/', name: 'Voting' }
           ]

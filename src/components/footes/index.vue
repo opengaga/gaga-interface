@@ -2,21 +2,21 @@
   <footer class="footers">
     <div class="website-info">
       <div class="email-info">
-        <div class="title"> Get the latest BlackCat updates, highlights and team activities </div>
+        <div class="title"> Get the latest OpenGaga updates, highlights and team activities </div>
         <div class="email-wrap">
           <input class="email-ipt" v-model="email" placeholder="Your e-mail" />
           <span class="link">I'm in</span>
         </div>
       </div>
       <div class="foot-links">
-        <p class="title">BlackCat</p>
+        <p class="title">OpenGaga</p>
         <p>Browse</p>
         <p>Activity</p>
         <p>Creat</p>
       </div>
       <div class="foot-links">
         <p class="title">Community</p>
-        <p>BCAT Token</p>
+        <p>GAGA Token</p>
         <p>Discussion</p>
         <p>Voting</p>
       </div>

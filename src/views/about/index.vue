@@ -34,9 +34,9 @@
     setup() {
       const howList = ref([
         {
-          title: 'How you can get BACT',
+          title: 'How you can get GAGA',
           headline:
-            'BCAT is not an investment and should be earned by active participation on the platform.75,000 tokens are issued every week,with 50% eseved for buyers, and 50% or sellers.',
+            'GAGA is not an investment and should be earned by active participation on the platform.75,000 tokens are issued every week,with 50% eseved for buyers, and 50% or sellers.',
           imgs: [
             {
               name: 'Create and sell',
@@ -57,11 +57,11 @@
           ]
         },
         {
-          title: 'How to use BACT',
+          title: 'How to use GAGA',
           headline: '',
           imgs: [
             {
-              name: 'Hustle in BlackCat DAO',
+              name: 'Hustle in OpenGaga DAO',
               link: huan
             },
             {
@@ -81,9 +81,9 @@
       ])
       const arrList = ref([
         {
-          title: 'Existing BlackCat users',
+          title: 'Existing OpenGaga users',
           time: '15/07/2020',
-          desc: `Active users will receive 2% of the total RARI supply according to the Liquidity Mining
+          desc: `Active users will receive 2% of the total GAGA supply according to the Liquidity Mining
             principle: based on the previous volume on Rarible marketplace. Both buyers and sellers
             will receive 50%.`
         },
