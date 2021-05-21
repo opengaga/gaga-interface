@@ -72,7 +72,7 @@
           <bid-card :border="false" />
           <div class="bid-bottom-btns">
             <span class="btn">Place a bid</span>
-            <span v-if="!!owner && order && signature" class="btn" @click="showSteps = true">
+            <span v-if="!!owner && order && signature" class="btn" @click="showCheckout = true">
               Buy
             </span>
           </div>
@@ -81,8 +81,16 @@
       </div>
     </div>
   </div>
+  <checkout
+    v-if="showCheckout && info && order && owner"
+    :name="info.prop_name"
+    :user="owner"
+    :price="info.price"
+    @submit="submitCheckout"
+    @close="showCheckout = false"
+  />
   <mask-layer
-    v-if="!!owner && showSteps && order && signature"
+    v-if="!!owner && info && showSteps && order && signature"
     @closeBid="showSteps = false"
     title="Follow steps"
     :showFoot="false"
@@ -90,10 +98,11 @@
     <steps @done="done">
       <approval-for-all-step :operator="operator" :address="address" />
       <purchase-step
-        :tokenId="info?.token_id"
-        :token="info?.token"
+        :tokenId="info.token_id"
+        :token="info.token"
         :address="owner"
         :order="order"
+        :amount="amount"
         :signature="signature"
       />
     </steps>
@@ -102,6 +111,7 @@
 <script lang="ts">
   import like from '@/components/like/index.vue'
   import maskLayer from '@/components/modals/maskLayer.vue'
+  import Checkout from '@/components/modals/checkout.vue'
   import { computed, defineComponent, ref, watchEffect } from 'vue'
   //import { ArrowsAltOutlined } from '@ant-design/icons-vue'
   import bidCard from '@/components/bid-card.vue'
@@ -132,7 +142,8 @@
       like,
       ApprovalForAllStep,
       PurchaseStep,
-      AddressCell
+      AddressCell,
+      Checkout
     },
     setup() {
       const activeKey = ref<string>('1')
@@ -169,6 +180,7 @@
         }
       }
       const showSteps = ref<boolean>(false)
+      const showCheckout = ref<boolean>(false)
       const info = ref<ItemType>()
       const api = useApi()
       const route = useRoute()
@@ -179,6 +191,7 @@
       const ownerInfo = ref<OwnerInfo | null>(null)
       const order = ref<SequenceOrderType | null>(null)
       const signature = ref<string | null>(null)
+      const amount = ref<string | null>(null)
 
       const params = computed(() => {
         return route.params as {
@@ -251,8 +264,15 @@
         showSteps.value = false
       }
 
+      const submitCheckout = (value) => {
+        amount.value = value
+        showCheckout.value = false
+        showSteps.value = true
+      }
+
       return {
         showSteps,
+        showCheckout,
         activeKey,
         fullscreen,
         bidinfos,
@@ -266,7 +286,9 @@
         attributes,
         order,
         signature,
-        done
+        amount,
+        done,
+        submitCheckout
       }
     }
   })

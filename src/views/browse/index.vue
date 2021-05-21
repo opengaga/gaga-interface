@@ -26,7 +26,7 @@
   </div>
   <placeBid v-if="showPlaceBid" @closeBid="showPlaceBid = false" />
   <report v-if="showReport" @closeReport="showReport = false" />
-  <purchase v-if="showPurchase" @closePurchase="showPurchase = false" />
+  <checkout v-if="showPurchase" @close="showPurchase = false" />
 </template>
 <script lang="ts">
   //import Bids from './bids.vue'
@@ -36,7 +36,7 @@
   import topsellers from './topsellers.vue'
   import placeBid from '@/components/modals/placeBid.vue'
   import report from '@/components/modals/report.vue'
-  import purchase from '@/components/modals/purchase.vue'
+  import checkout from '@/components/modals/checkout.vue'
   import bus from '@/bus'
 
   import { useApi } from '@/hooks/useApi'
@@ -49,7 +49,7 @@
       topsellers,
       placeBid,
       report,
-      purchase
+      checkout
     },
 
     setup() {

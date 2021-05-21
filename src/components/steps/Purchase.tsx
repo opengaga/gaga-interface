@@ -36,6 +36,10 @@ const PurchaseStep = defineComponent({
     signature: {
       type: String,
       required: true
+    },
+    amount: {
+      type: String,
+      required: true
     }
   },
   setup(props) {
@@ -68,7 +72,7 @@ const PurchaseStep = defineComponent({
         props.signature,
         BigNumber.from(buyerFee.buyFee),
         buyerFee.buyFeeSignature,
-        BigNumber.from(props.order.selling),
+        BigNumber.from(props.amount),
         account.value
       )
     }

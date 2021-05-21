@@ -7,8 +7,8 @@
       </div>
       <slot></slot>
       <div v-if="props.showFoot">
-        <a class="submit-btn place">{{ props.confirmBtn ?? 'Place a bid' }}</a>
-        <a class="submit-btn cancel">{{ props.cancelBtn ?? 'Cancel' }}</a>
+        <a class="submit-btn place" @click="confirm">{{ props.confirmBtn ?? 'Place a bid' }}</a>
+        <a class="submit-btn cancel" @click="closeBid">{{ props.cancelBtn ?? 'Cancel' }}</a>
       </div>
     </div>
   </div>
@@ -36,8 +36,12 @@
       const closeBid = () => {
         context.emit('closeBid')
       }
+      const confirm = () => {
+        context.emit('confirm')
+      }
       return {
         props,
+        confirm,
         closeBid
       }
     }
