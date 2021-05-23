@@ -237,6 +237,13 @@ export class Api extends Request {
       }
     })
   }
+
+  // create bid
+  async createBid(body: CreateOrderRequest) {
+    return this.post<ServerResponse<any>>('/item/bids/create', {
+      body
+    })
+  }
 }
 
 export class ApiNode extends Request {

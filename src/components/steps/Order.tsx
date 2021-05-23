@@ -19,8 +19,12 @@ const OrderStep = defineComponent({
     buyAsset: Object as PropType<Asset>,
     price: Object as PropType<BigNumber>,
     supply: {
-      type: String,
+      type: [String, Object] as PropType<string | BigNumber>,
       default: '1'
+    },
+    isBid: {
+      type: Boolean,
+      default: () => false
     }
   },
   setup(props) {
@@ -54,13 +58,17 @@ const OrderStep = defineComponent({
         )
         const signature = await order.sign(signer)
 
-        await api.changeSale({
-          token: props.sellAsset.token,
-          token_id: props.sellAsset.tokenId.toString(),
-          sale: 1
-        })
+        if (props.isBid) {
+          await api.createBid({ order: order.sequence(), signature })
+        } else {
+          await api.changeSale({
+            token: props.sellAsset.token,
+            token_id: props.sellAsset.tokenId.toString(),
+            sale: 1
+          })
 
-        await api.createOrder({ order: order.sequence(), signature })
+          await api.createOrder({ order: order.sequence(), signature })
+        }
 
         error.value = null
         nextStep?.()

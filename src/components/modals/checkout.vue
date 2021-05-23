@@ -54,7 +54,7 @@
 
       const error = computed(() => {
         if (!amount.value) {
-          return null
+          return new Error('Please input amount')
         }
 
         if (amount.value.includes('.')) {

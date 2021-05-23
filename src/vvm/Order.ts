@@ -95,7 +95,7 @@ export default class Order {
     buyAsset: Asset,
     sellAmount: BigNumber,
     buyAmount: BigNumber,
-    saltStr: string,
+    saltStr?: string,
     sellerFee = defaultFee
   ) {
     const salt = BigNumber.from(saltStr ?? randomHex(32))

@@ -1,7 +1,7 @@
 import { useBlockNumber } from '@/state/application/hooks'
 import { ERC20 } from '@/vvm/contracts/ERC20'
 import { BigNumber } from '@ethersproject/bignumber'
-import { ref, Ref, watch } from '@vue/runtime-core'
+import { ref, Ref, watch, watchEffect } from '@vue/runtime-core'
 import { useWallet } from './useWallet'
 
 export const useBalance = (account?: Ref<string | null | undefined>) => {
@@ -9,16 +9,16 @@ export const useBalance = (account?: Ref<string | null | undefined>) => {
   const balance = ref<BigNumber>(BigNumber.from('0'))
   const blockNumber = useBlockNumber()
 
-  watch(
-    [() => account?.value, () => getProvider(), () => blockNumber?.value],
-    ([account, provider]) => {
-      if (account && provider) {
-        provider.getBalance(account).then((_balance) => {
-          balance.value = _balance
-        })
-      }
+  watchEffect(() => {
+    blockNumber
+    const provider = getProvider()
+
+    if (account?.value && provider) {
+      provider.getBalance(account.value).then((_balance) => {
+        balance.value = _balance
+      })
     }
-  )
+  })
 
   return balance
 }
@@ -31,18 +31,18 @@ export const useErc20Balance = (
   const balance = ref<BigNumber>(BigNumber.from('0'))
   const blockNumber = useBlockNumber()
 
-  watch(
-    [() => address?.value, () => account?.value, () => getProvider(), () => blockNumber?.value],
-    ([address, account, provider]) => {
-      if (address && account && provider) {
-        const erc20 = new ERC20(address, provider)
+  watchEffect(() => {
+    blockNumber
+    const provider = getProvider()
 
-        erc20.balanceOf(account).then((value) => {
-          balance.value = value
-        })
-      }
+    if (address?.value && account?.value && provider) {
+      const erc20 = new ERC20(address.value, provider)
+
+      erc20.balanceOf(account.value).then((value) => {
+        balance.value = value
+      })
     }
-  )
+  })
 
   return balance
 }

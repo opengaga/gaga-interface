@@ -71,8 +71,12 @@
         <div class="bid-bottom">
           <bid-card :border="false" />
           <div class="bid-bottom-btns">
-            <span class="btn">Place a bid</span>
-            <span v-if="!!owner && order && signature" class="btn" @click="showCheckout = true">
+            <span v-if="!!owner && info" @click="showBid = true" class="btn">Place a bid</span>
+            <span
+              v-if="!!owner && info && order && signature"
+              class="btn"
+              @click="showCheckout = true"
+            >
               Buy
             </span>
           </div>
@@ -107,13 +111,19 @@
       />
     </steps>
   </mask-layer>
+  <MakeBid
+    v-if="showBid && tokenAddress && tokenId && info"
+    :tokenAddress="tokenAddress"
+    :tokenId="tokenId"
+    :info="info"
+    @close="showBid = false"
+  />
 </template>
 <script lang="ts">
   import like from '@/components/like/index.vue'
   import maskLayer from '@/components/modals/maskLayer.vue'
   import Checkout from '@/components/modals/checkout.vue'
   import { computed, defineComponent, ref, watchEffect } from 'vue'
-  //import { ArrowsAltOutlined } from '@ant-design/icons-vue'
   import bidCard from '@/components/bid-card.vue'
   import OwnerCard from '@/components/owner-card.vue'
   import TokenDetail from '@/components/token-detail.vue'
@@ -122,13 +132,12 @@
   import { useApi } from '@/hooks/useApi'
   import { useRoute } from 'vue-router'
   import { ItemType, Owner, OwnerInfo } from '@/api/types'
-  //import { useWallet } from '@/hooks/useWallet'
   import { useTokenURI } from '@/hooks/useTokenURI'
   import { AssetType, SequenceOrderType } from '@/vvm/types'
   import Steps from '@/components/steps'
   import ApprovalForAllStep from '@/components/steps/ApprovalForAllStep'
-  import PurchaseStep from '@/components/steps/Purchase'
   import { deployments } from '@/vvm/constants'
+  import MakeBid from './make-bid.vue'
 
   export default defineComponent({
     name: 'bidInfo',
@@ -141,9 +150,9 @@
       Steps,
       like,
       ApprovalForAllStep,
-      PurchaseStep,
       AddressCell,
-      Checkout
+      Checkout,
+      MakeBid
     },
     setup() {
       const activeKey = ref<string>('1')
@@ -181,6 +190,7 @@
       }
       const showSteps = ref<boolean>(false)
       const showCheckout = ref<boolean>(false)
+      const showBid = ref<boolean>(false)
       const info = ref<ItemType>()
       const api = useApi()
       const route = useRoute()
@@ -273,6 +283,7 @@
       return {
         showSteps,
         showCheckout,
+        showBid,
         activeKey,
         fullscreen,
         bidinfos,
@@ -288,7 +299,9 @@
         signature,
         amount,
         done,
-        submitCheckout
+        submitCheckout,
+        tokenId,
+        tokenAddress
       }
     }
   })
