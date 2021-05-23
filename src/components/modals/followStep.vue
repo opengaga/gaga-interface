@@ -3,7 +3,7 @@
     <div class="step-modal">
       <a-spin></a-spin>
       <div class="step-desc">
-        <p class="step-title">Convert BNB to WBNB</p>
+        <p class="step-title">Convert ZTB to WZTB</p>
         <p>Send transaction with your wallet</p>
       </div>
     </div>

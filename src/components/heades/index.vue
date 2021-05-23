@@ -123,10 +123,10 @@
           name: 'MyItems',
           link: '/myItems'
         },
-        {
-          name: 'Following',
-          link: '/fllowing'
-        },
+        // {
+        //   name: 'Following',
+        //   link: '/fllowing'
+        // },
         {
           name: 'Community',
           children: [

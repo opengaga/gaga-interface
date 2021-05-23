@@ -74,7 +74,6 @@
           </a-tab-pane>
         </a-tabs>
         <div class="bid-bottom">
-          <bid-card :border="false" />
           <div class="bid-bottom-btns">
             <span v-if="!!owner && info" @click="showBid = true" class="btn">Place a bid</span>
             <span

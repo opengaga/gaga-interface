@@ -57,12 +57,10 @@ export default defineComponent({
 
       let activated = false
       try {
-        const update = await connector.activate().then(
-          (update): ConnectorUpdate => {
-            activated = true
-            return update
-          }
-        )
+        const update = await connector.activate().then((update): ConnectorUpdate => {
+          activated = true
+          return update
+        })
 
         const augmentedUpdate = await augmentConnectorUpdate(connector, update)
 

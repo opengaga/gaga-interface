@@ -1,6 +1,6 @@
 <template>
   <div class="user-card">
-    <img class="user-avatr" src="@/assets/imgs/collect-avatar.png" />
+    <address-image class="user-avatr" :src="user" />
     <div class="user-info">
       <div class="user-info-title">
         <span class="user-charge"><format-balance :balance="balance" /></span>
@@ -16,11 +16,15 @@
 <script lang="ts">
   import { BigNumber } from '@ethersproject/bignumber'
   import { defineComponent, PropType } from 'vue'
+  import AddressImage from './image/address-image'
 
   export default defineComponent({
     props: {
       user: String,
       balance: [String, Object] as PropType<string | BigNumber>
+    },
+    components: {
+      AddressImage
     },
     setup(props) {
       return { props }
