@@ -1,8 +1,8 @@
 export const deployments = {
-  VVMToken: '0x9f4c356706eCFc6b56e30c7b2Bb1DFA0C8C79c3d',
-  MintableToken: '0x827C75982FD71FabEE4c041a72606431703E3e66',
-  ExchangeV1: '0x730aa75aa8131E2Ee5CFBBdaDF7F9ad7BA3F02B5',
-  TransferProxy: '0x970ABD3b20133c62d98fDa859291bd5dE6f40b55',
-  TransferProxyForDeprecated: '0x0bD8567AA7DBC22a7aeecD35F84bc8Fae9ce453e',
-  ERC20TransferProxy: '0x31bd25bd37341115a4ae0720d3aae13e9f8c4358'
+  VVMToken: '0x86963a8F359720b9ad2BdEF59eB8f30cdb6826EB',
+  MintableToken: '0xc0163BeeF455296EC6C92f7F27A1b646a02dA285',
+  ExchangeV1: '0xfe9Af50f68f4b5222C8fCdd4cb9C34D27940Be3b',
+  TransferProxy: '0x7152E69aa222912ED17e92df5Db94eCc1c5D0445',
+  TransferProxyForDeprecated: '0x99cda64b0F126C697d6f7Ae86DD98a1BD9d19aA5',
+  ERC20TransferProxy: '0xCb9eA30ad6C6a6e293C8dBE28a9495e994AeAe1a'
 }

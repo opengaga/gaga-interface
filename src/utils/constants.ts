@@ -20,5 +20,5 @@ export const symbol = 'ZTB'
 export const wrapperSymbol = 'WZTB'
 
 export const tokens = {
-  weth: '0xae13d989dac2f0debff460ac112a837c89baa7cd'
+  weth: '0x5562ced5cdD372ac0E1AEDab9E3525a8BC195e5E'
 }
