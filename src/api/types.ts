@@ -215,4 +215,19 @@ export type Activity = {
 }
 export type GetActivityListResponse = ServerListResponse<Activity>
 
+export type Bid = {
+  bid_data: string // SequenceOrderType json
+  bid_fee: number
+  bid_id: number
+  bid_price: string
+  bid_result: number
+  bid_time: string
+  bid_user_address: string
+  bid_user_id: number
+  coin_id: number
+  coin_id_fee: number
+  item_id: number
+}
+export type GetBidListResponse = ServerListResponse<Bid>
+
 export type GetOwnersResponse = ServerListResponse<Owner>

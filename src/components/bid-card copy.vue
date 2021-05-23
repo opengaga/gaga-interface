@@ -1,26 +1,25 @@
 <template>
-  <div class="user-card">
+  <div :class="['user-card', props.user?.border ? 'bord' : '']">
     <img class="user-avatr" src="@/assets/imgs/collect-avatar.png" />
     <div class="user-info">
       <div class="user-info-title">
-        <span class="user-charge"><format-balance :balance="balance" /></span>
+        Put on sale 205 editions for <span class="user-charge">0.035ETH</span>
       </div>
       <div class="user-info-desc">
-        <div>
-          By <span class="money-num"><shorten-address :address="user" /></span>
-        </div>
+        <div
+          >8 hours ago basis <span v-if="props.user?.amount" class="money-num">0.005WBNB</span>
+          <span class="user-number">{{ $route.params.address }}</span></div
+        >
       </div>
     </div>
   </div>
 </template>
 <script lang="ts">
-  import { BigNumber } from '@ethersproject/bignumber'
-  import { defineComponent, PropType } from 'vue'
+  import { defineComponent } from 'vue'
 
   export default defineComponent({
     props: {
-      user: String,
-      balance: [String, Object] as PropType<string | BigNumber>
+      user: Object
     },
     setup(props) {
       return { props }

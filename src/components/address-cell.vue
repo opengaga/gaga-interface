@@ -1,7 +1,10 @@
 <template>
   <p>
     <router-link :to="`/myItems/${address}`"><address-image :src="address" /></router-link>
-    <span>{{ address }}</span>
+    <a-tooltip>
+      <template #title>{{ address }}</template>
+      <span><shorten-address :address="address" /></span>
+    </a-tooltip>
   </p>
 </template>
 <script lang="ts">
@@ -26,7 +29,6 @@
 <style scoped lang="scss">
   p {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     font-size: 12px;

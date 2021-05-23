@@ -58,15 +58,20 @@
               "
             />
           </a-tab-pane>
-          <a-tab-pane class="pane" key="2" tab="history">
+          <!-- <a-tab-pane class="pane" key="2" tab="history">
             <bid-card v-for="(item, idx) in 5" :key="idx" :user="item" />
-          </a-tab-pane>
+          </a-tab-pane> -->
           <a-tab-pane class="pane" key="3" tab="Details">
             <token-detail :owner="owner" :attributes="attributes" />
           </a-tab-pane>
-          <a-tab-pane class="pane" key="4" tab="Bids"
-            ><bid-card v-for="(item, idx) in 5" :key="idx" :user="item"
-          /></a-tab-pane>
+          <a-tab-pane class="pane" key="4" tab="Bids">
+            <bid-card
+              v-for="(item, idx) of bids"
+              :key="idx"
+              :user="item.bid_user_address"
+              :balance="item.bid_price"
+            />
+          </a-tab-pane>
         </a-tabs>
         <div class="bid-bottom">
           <bid-card :border="false" />
@@ -131,7 +136,7 @@
   import AddressCell from '@/components/address-cell.vue'
   import { useApi } from '@/hooks/useApi'
   import { useRoute } from 'vue-router'
-  import { ItemType, Owner, OwnerInfo } from '@/api/types'
+  import { Bid, ItemType, Owner, OwnerInfo } from '@/api/types'
   import { useTokenURI } from '@/hooks/useTokenURI'
   import { AssetType, SequenceOrderType } from '@/vvm/types'
   import Steps from '@/components/steps'
@@ -202,6 +207,7 @@
       const order = ref<SequenceOrderType | null>(null)
       const signature = ref<string | null>(null)
       const amount = ref<string | null>(null)
+      const bids = ref<Bid[]>([])
 
       const params = computed(() => {
         return route.params as {
@@ -215,6 +221,14 @@
         () =>
           params.value.seller || (owners.value.length === 1 ? owners.value[0].user_address : null)
       )
+
+      watchEffect(() => {
+        if (tokenAddress.value && tokenId.value) {
+          api.getBids({ token: tokenAddress.value, token_id: tokenId.value }).then(({ list }) => {
+            bids.value = list
+          })
+        }
+      })
 
       watchEffect(() => {
         if (owner.value && tokenAddress.value && tokenId.value) {
@@ -301,7 +315,8 @@
         done,
         submitCheckout,
         tokenId,
-        tokenAddress
+        tokenAddress,
+        bids
       }
     }
   })

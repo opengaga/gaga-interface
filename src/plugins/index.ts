@@ -23,6 +23,7 @@ import {
 } from 'ant-design-vue'
 
 import FormatBalance from '@/components/format/FormatBalance'
+import ShortenAddress from '@/components/shorten-address.vue'
 import TokenImage from '@/components/image/token-image'
 
 const Ant = {
@@ -55,6 +56,7 @@ const Ant = {
     // custom
     Vue.component(FormatBalance.name, FormatBalance)
     Vue.component(TokenImage.name, TokenImage)
+    Vue.component(ShortenAddress.name, ShortenAddress)
   }
 }
 export default Ant

@@ -17,7 +17,8 @@ import type {
   ServerResponse,
   OwnerInfo,
   ActivityType,
-  GetActivityListResponse
+  GetActivityListResponse,
+  GetBidListResponse
 } from './types'
 
 import { Request, combineConfig, combineURL } from './request'
@@ -242,6 +243,17 @@ export class Api extends Request {
   async createBid(body: CreateOrderRequest) {
     return this.post<ServerResponse<any>>('/item/bids/create', {
       body
+    })
+  }
+
+  // get bids
+  async getBids({ page = 1, token, token_id }: { page?: number; token: string; token_id: string }) {
+    return this.get<GetBidListResponse>('/item/bids/list', {
+      params: {
+        page,
+        token,
+        token_id
+      }
     })
   }
 }
