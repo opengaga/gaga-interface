@@ -20,7 +20,7 @@
             <img src="@/assets/imgs/b3.png" alt="twiter" />
             <div class="item-rt">
               <p class="title">Bidding Balance</p>
-              <p><format-balance :balance="wethBalance" symbol="WETH" :decimal="18" /> $420.12</p>
+              <p><format-balance :balance="wethBalance" symbol="WZTB" :decimal="18" /> $420.12</p>
             </div>
           </div>
         </div>

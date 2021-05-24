@@ -1,7 +1,7 @@
 <template>
   <div class="about-token">
     <img class="about-token-topimg" src="@/assets/imgs/expolre.svg" />
-    <p class="about-title">About BACT Token</p>
+    <p class="about-title">About GAGA Token</p>
     <p class="headline">Who is eligible to participate in the airdrop?</p>
     <div class="headline-info">
       <list v-for="(item, idx) in arrList" :index="idx + 1" :ants="item" :key="idx" />
