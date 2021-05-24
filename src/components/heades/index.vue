@@ -130,9 +130,9 @@
         {
           name: 'Community',
           children: [
-            { link: '/about', name: 'GAGA Token' },
-            { link: '/', name: 'Discussion' },
-            { link: '/', name: 'Voting' }
+            { link: '/about', name: 'GAGA Token' }
+            // { link: '/', name: 'Discussion' },
+            // { link: '/', name: 'Voting' }
           ]
         }
       ])

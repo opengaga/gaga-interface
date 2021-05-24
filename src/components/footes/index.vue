@@ -10,15 +10,21 @@
       </div>
       <div class="foot-links">
         <p class="title">OpenGaga</p>
-        <p>Browse</p>
-        <p>Activity</p>
-        <p>Creat</p>
+        <p>
+          <router-link to="browse">Browse</router-link>
+        </p>
+        <p>
+          <router-link to="activity">Activity</router-link>
+        </p>
+        <p>
+          <router-link to="create">Create</router-link>
+        </p>
       </div>
       <div class="foot-links">
         <p class="title">Community</p>
-        <p>GAGA Token</p>
-        <p>Discussion</p>
-        <p>Voting</p>
+        <p><router-link to="about">GAGA Token</router-link> </p>
+        <!-- <p>Discussion</p>
+        <p>Voting</p> -->
       </div>
       <div class="foot-links">
         <p class="title langue">Language</p>
