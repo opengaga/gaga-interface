@@ -74,6 +74,32 @@
     opacity: 1;
     border: none;
     border-radius: 24px;
+
+    transition: all 0.3s;
+
+    &:hover,
+    &:focus {
+      background: linear-gradient(138deg, #4768ff 0%, #db30ff 100%) !important;
+      color: #fff;
+    }
+  }
+  .ant-btn-primary-disabled,
+  .ant-btn-primary.disabled,
+  .ant-btn-primary[disabled],
+  .ant-btn-primary-disabled:hover,
+  .ant-btn-primary.disabled:hover,
+  .ant-btn-primary[disabled]:hover,
+  .ant-btn-primary-disabled:focus,
+  .ant-btn-primary.disabled:focus,
+  .ant-btn-primary[disabled]:focus,
+  .ant-btn-primary-disabled:active,
+  .ant-btn-primary.disabled:active,
+  .ant-btn-primary[disabled]:active,
+  .ant-btn-primary-disabled.active,
+  .ant-btn-primary.disabled.active,
+  .ant-btn-primary[disabled].active {
+    background: linear-gradient(138deg, #4768ff 0%, grey 50%, #db30ff 100%) !important;
+    color: #fff !important;
   }
 
   .website-container {
