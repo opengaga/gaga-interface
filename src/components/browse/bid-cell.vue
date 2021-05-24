@@ -2,7 +2,7 @@
   <div class="bid-cell">
     <div class="cell-title">
       <div class="head-imgs">
-        <img v-for="i in num" :key="i" src="@/assets/imgs/brandLogo.svg" />
+        <img v-for="i in num" :key="i" src="@/assets/imgs/brandLogo.png" />
       </div>
       <a-dropdown :trigger="['click']" placement="bottomRight">
         <span class="ant-dropdown-link" @click.prevent> ... </span>

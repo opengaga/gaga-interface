@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <router-link :to="{ path: '/' }">
-      <img class="brand" src="@/assets/imgs/brandLogo.svg" />
+      <img class="brand" src="@/assets/imgs/brandLogo.png" />
     </router-link>
 
     <div class="ipt-wrap">

@@ -9,18 +9,18 @@
         <span class="explain">What is wallet?</span></div
       >
       <walletLink
-        :img="require('@/assets/imgs/brandLogo.svg').default"
+        :img="require('@/assets/imgs/brandLogo.png').default"
         @click="connect"
         text="Metamask"
         link=""
       />
 
       <walletLink
-        :img="require('@/assets/imgs/brandLogo.svg').default"
+        :img="require('@/assets/imgs/brandLogo.png').default"
         text="Binance Chain Wallet"
         link=""
       />
-      <walletLink :img="require('@/assets/imgs/brandLogo.svg').default" text="Trust" link="" />
+      <walletLink :img="require('@/assets/imgs/brandLogo.png').default" text="Trust" link="" />
       <div class="connect-bottom"
         >We do not own your private keys and cannot access your funds without your
         confirmation.</div

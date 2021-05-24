@@ -8,7 +8,7 @@
         <div class="preview-title">Preview</div>
         <div class="preview-info">
           <div v-if="form.preview">
-            <img class="logo" src="@/assets/imgs/brandLogo.svg" />
+            <img class="logo" src="@/assets/imgs/brandLogo.png" />
             <img class="preview-img" :src="form.preview" />
             <div><span class="bold600">Auction</span> <span class="opa05">1 of 1</span></div>
             <div class="wallet-bid">Place a bid</div>
