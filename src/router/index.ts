@@ -6,7 +6,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'Home',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: Home
   },
@@ -14,7 +14,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/browse',
     name: 'Browse',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: () => import('@/views/browse/index.vue')
   },
@@ -22,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/create',
     name: 'Create',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: () => import('@/views/create/index.vue')
   },
@@ -30,7 +30,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/single',
     name: 'Single',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: () => import('@/views/single/index.vue')
   },
@@ -38,7 +38,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/multiple',
     name: 'Multiple',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: () => import('@/views/multiple/index.vue')
   },
@@ -46,7 +46,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/collection',
     name: 'Collection',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: () => import('@/views/collection/index.vue')
   },
@@ -54,7 +54,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/connect',
     name: 'Connect',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: () => import('@/views/connect/index.vue')
   },
@@ -62,7 +62,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/about',
     name: 'About',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: () => import('@/views/about/index.vue')
   },
@@ -70,7 +70,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/activity',
     name: 'Activity',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: () => import('@/views/activity/index.vue')
   },
@@ -78,7 +78,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/profile',
     name: 'Profile',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: () => import('@/views/profile/index.vue')
   },
@@ -87,7 +87,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/bidInfo/:address/:tokenId/:seller?',
     name: 'BidInfo',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: () => import('@/views/bidInfo/index.vue')
   },
@@ -95,7 +95,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/myItems/:address?',
     name: 'MyItems',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: () => import('@/views/myItems/index.vue')
   },
@@ -103,7 +103,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/fllowing',
     name: 'Following',
     meta: {
-      title: 'GAGA'
+      title: 'BACT'
     },
     component: () => import('@/views/fllowing/index.vue')
   }
