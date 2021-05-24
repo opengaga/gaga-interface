@@ -31,7 +31,7 @@
 <script lang="ts">
   //import Bids from './bids.vue'
   import Collections from './collections.vue'
-  import { defineComponent, ref } from 'vue'
+  import { defineComponent, ref, watchEffect } from 'vue'
   import Expolre from './expolre.vue'
   import topsellers from './topsellers.vue'
   import placeBid from '@/components/modals/placeBid.vue'
@@ -67,16 +67,19 @@
       bus.on('showReport', () => {
         showReport.value = true
       })
-      api
-        .getHotList()
-        .then((res: any) => {
-          if (res?.list) {
-            userData.value = res.list
-          }
-        })
-        .catch((err) => {
-          console.log(err.msg)
-        })
+
+      watchEffect(() => {
+        api
+          .getHotList()
+          .then((res: any) => {
+            if (res?.list) {
+              userData.value = res.list
+            }
+          })
+          .catch((err) => {
+            console.log(err.msg)
+          })
+      })
 
       return {
         userData,

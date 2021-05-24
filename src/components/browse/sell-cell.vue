@@ -1,15 +1,13 @@
 <template>
   <div class="seller-cell">
     <span class="index">{{ index + 1 }}</span>
-    <router-link
-      class="img-router"
-      :to="{ path: '/myItems', query: { address: data.user_address } }"
-    >
+    <router-link class="img-router" :to="'/myItems/' + data.user_address">
       <token-image class="seller-cell-img" :src="data.user_cover" />
     </router-link>
     <div class="seller-cell-info">
       <router-link class="img-router" to="myItems">
-        <span class="title">{{ data.user_name }}</span>
+        <span class="title" v-if="data.user_name">{{ data.user_name }}</span>
+        <span class="title" v-else><shorten-address :address="data.user_address" /></span>
       </router-link>
       <span class="num">{{ data.balance }}</span>
     </div>
@@ -18,9 +16,10 @@
 <script lang="ts">
   import { defineComponent } from 'vue'
   import tokenImage from '@/components/image/token-image'
+  import ShortenAddress from '../shorten-address.vue'
 
   export default defineComponent({
-    components: { tokenImage },
+    components: { tokenImage, ShortenAddress },
     props: {
       data: {
         type: Object,
@@ -55,8 +54,8 @@
     width: 200px;
     margin-bottom: 25px;
     white-space: nowrap;
-    text-overflow: ellipsis;
     overflow: hidden;
+
     .index {
       margin-right: 16px;
     }

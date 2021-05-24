@@ -64,6 +64,7 @@
         api
           .topUser({ user: topStr.value })
           .then((res: any): void => {
+            console.log(res.list)
             sellersList.value = res.list
           })
           .catch((err) => {
