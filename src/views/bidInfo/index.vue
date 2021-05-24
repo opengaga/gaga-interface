@@ -172,10 +172,6 @@
           link: ''
         },
         {
-          name: 'View at OpenSea',
-          link: ''
-        },
-        {
           name: 'Share',
           link: ''
         },

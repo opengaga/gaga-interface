@@ -2,8 +2,8 @@
   <div class="wallet-modal">
     <div class="account-modal">
       <div class="account-secret">
-        <div v-if="wethBalance.user_name" class="account-secret-username">zyhzzz</div>
-        <div class="num" id="copyText">{{ secretNum }}</div>
+        <!-- <div v-if="wethBalance.user_name" class="account-secret-username">zyhzzz</div> -->
+        <div class="num" id="copyText">{{ account }}</div>
         <img @click="copyText" src="@/assets/imgs/copy.svg" />
       </div>
       <div><a class="act-profile" @click="toConvert('profile')">Set display name</a></div>
@@ -13,23 +13,23 @@
             <img src="@/assets/imgs/b3.png" alt="twiter" />
             <div class="item-rt">
               <p class="title">Balance</p>
-              <p><format-balance :balance="balance" /> $420.12</p>
+              <p><format-balance :balance="balance" /></p>
             </div>
           </div>
           <div class="balance-item">
             <img src="@/assets/imgs/b3.png" alt="twiter" />
             <div class="item-rt">
-              <p class="title">Bidding Balance</p>
-              <p><format-balance :balance="wethBalance" symbol="WZTB" :decimal="18" /> $420.12</p>
+              <p class="title">WZTB Balance</p>
+              <p><format-balance :balance="wethBalance" symbol="WZTB" :decimal="18" /></p>
             </div>
           </div>
         </div>
         <img src="@/assets/imgs/convert.svg" class="trans-btn" @click="toConvert('')" />
       </div>
       <div class="account-link">
-        <router-link to="myItems"><img src="@/assets/imgs/item.svg" />My items</router-link>
-        <router-link to="profile"><img src="@/assets/imgs/edit.svg" />Edit profile</router-link>
-        <router-link to=""><img src="@/assets/imgs/disconect.svg" />Disconnect</router-link>
+        <router-link to="/myItems"><img src="@/assets/imgs/item.svg" />My items</router-link>
+        <router-link to="/profile"><img src="@/assets/imgs/edit.svg" />Edit profile</router-link>
+        <!-- <router-link to=""><img src="@/assets/imgs/disconect.svg" />Disconnect</router-link> -->
       </div>
     </div>
   </div>
@@ -52,7 +52,6 @@
       const weth = ref(tokens.weth)
       const wethBalance = useErc20Balance(weth, account)
 
-      const secretNum = ref('0x7b78hb8y9vuy98y98yubvvubiuh98y89tyy89hb')
       const toConvert = (path: string) => {
         context.emit('closeAccount')
         if (path) {
@@ -69,7 +68,7 @@
       }
 
       return {
-        secretNum,
+        account,
         toConvert,
         wethBalance,
         copyText

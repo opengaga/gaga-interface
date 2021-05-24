@@ -7,8 +7,7 @@
       <div class="name-wrap">
         <div class="user-name">{{ userData?.user_name }}</div>
         <div class="copyable-link-wrap">
-          <span class="name-detail">{{ userData?.user_address }}</span>
-          <img class="copy-btn" src="@/assets/imgs/copy.svg" />
+          <paragraph class="name-detail" copyable>{{ userData?.user_address }}</paragraph>
         </div>
         <div class="share-link-wrap">
           <div class="user-sign">{{ userData?.user_desc }}</div>

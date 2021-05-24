@@ -48,7 +48,7 @@
 
       const { list, loadMore } = useList<ItemType>(1, 20, (page, size) =>
         api.getItems({ page, size }).then((res) => {
-          return res.list
+          return { data: res.list, total: res.pager.total }
         })
       )
 

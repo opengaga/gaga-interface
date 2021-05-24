@@ -16,7 +16,7 @@
           <input
             v-model="userModel.short_url"
             type="text"
-            placeholder="rarible.com/enter your custom URL"
+            placeholder="gaganft.vip / enter your custom URL"
           />
         </div>
         <div class="form-item">

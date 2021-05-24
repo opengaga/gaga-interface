@@ -78,12 +78,8 @@
         font-size: 32px;
       }
       .name-detail {
-        width: 300px;
-        display: inline-block;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        vertical-align: middle;
+        font-size: 16px;
+        color: inherit;
       }
 
       .user-link {
@@ -130,6 +126,8 @@
       position: relative;
       margin-right: 50px;
       font-size: 18px;
+      cursor: pointer;
+
       &-num {
         position: absolute;
         top: 0;

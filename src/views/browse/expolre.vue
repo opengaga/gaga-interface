@@ -30,7 +30,7 @@
         <bid-cell :data="item" />
       </a-col>
     </a-row>
-    <scroll-view @load-more="loadMore" />
+    <scroll-view :loading="loading" @load-more="loadMore" />
   </div>
 </template>
 <script lang="ts">
@@ -49,9 +49,9 @@
       const expolreTags = ref(['ALL', 'Art', 'Photo', 'Games', 'Music'])
       const api = useApi()
 
-      const { list, loadMore } = useList<ItemType>(1, 20, (page, size) =>
-        api.getItems({ page, size }).then((res) => {
-          return res.list
+      const { list, loadMore, loading } = useList<ItemType>(1, 20, (page, size) =>
+        api.getItems({ page, size }).then(({ list, pager }) => {
+          return { data: list, total: pager.total }
         })
       )
 
@@ -59,7 +59,8 @@
         selectedExpolre,
         expolreTags,
         list,
-        loadMore
+        loadMore,
+        loading
       }
     }
   })

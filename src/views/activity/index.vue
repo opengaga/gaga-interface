@@ -29,7 +29,7 @@
         <div class="no-list" v-if="activities.length < 1">
           <p class="title">Nothing yet</p>
           <p class="desc">Activity will be shown here</p>
-          <marketBtn>Explore Rarible</marketBtn>
+          <marketBtn>Explore OpenGaga</marketBtn>
         </div>
         <div class="list-items" v-else>
           <div class="list-item" v-for="(item, idx) in activities" :key="idx">

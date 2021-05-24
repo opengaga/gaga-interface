@@ -4,6 +4,7 @@
 <script lang="ts">
   import { reactive } from '@vue/reactivity'
   import { defineComponent, onBeforeUnmount, onMounted, provide } from 'vue'
+  import { throttle } from 'throttle-debounce'
 
   import { ScrollState } from './types'
 
@@ -25,7 +26,7 @@
         scrollLeftOffset: 0
       })
 
-      const onScroll = () => {
+      const onScroll = throttle(50, true, () => {
         const _scrollTop = getScrollTop()
         const _scrollLeft = getScrollLeft()
 
@@ -34,7 +35,7 @@
 
         state.scrollTop = _scrollTop
         state.scrollLeft = _scrollLeft
-      }
+      })
 
       onMounted(() => {
         window.addEventListener('scroll', onScroll)

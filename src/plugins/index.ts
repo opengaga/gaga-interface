@@ -19,7 +19,8 @@ import {
   InputNumber,
   Row,
   Col,
-  Image
+  Image,
+  Typography
 } from 'ant-design-vue'
 
 import FormatBalance from '@/components/format/FormatBalance'
@@ -52,6 +53,9 @@ const Ant = {
     Vue.component(Row.name, Row)
     Vue.component(Col.name, Col)
     Vue.component(Image.name, Image)
+    Vue.component(Typography.name, Typography)
+    Vue.component(Typography.Paragraph.name, Typography.Paragraph)
+    Vue.component(Typography.Text.name, Typography.Text)
 
     // custom
     Vue.component(FormatBalance.name, FormatBalance)

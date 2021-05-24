@@ -5,7 +5,7 @@
       <token-image class="seller-cell-img" :src="data.user_cover" />
     </router-link>
     <div class="seller-cell-info">
-      <router-link class="img-router" to="myItems">
+      <router-link class="img-router" :to="'/myItems/' + data.user_address">
         <span class="title" v-if="data.user_name">{{ data.user_name }}</span>
         <span class="title" v-else><shorten-address :address="data.user_address" /></span>
       </router-link>
@@ -74,7 +74,7 @@
       }
       .title {
         font-weight: 600;
-        font-size: 16px;
+        font-size: 14px;
       }
       .num {
         font-size: 12px;

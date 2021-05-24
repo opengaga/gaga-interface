@@ -47,7 +47,7 @@
               link: san
             },
             {
-              name: 'Get airdrop as Rarible user',
+              name: 'Get airdrop as OpenGaga user',
               link: hua
             },
             {
@@ -84,7 +84,7 @@
           title: 'Existing OpenGaga users',
           time: '15/07/2020',
           desc: `Active users will receive 2% of the total GAGA supply according to the Liquidity Mining
-            principle: based on the previous volume on Rarible marketplace. Both buyers and sellers
+            principle: based on the previous volume on OpenGaga marketplace. Both buyers and sellers
             will receive 50%.`
         },
         {

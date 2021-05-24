@@ -23,12 +23,12 @@
       <div>
         <span class="title">Your Balance</span>
         <span class="line"></span>
-        <span class="num">1000 GAGA</span>
+        <span class="num">0 GAGA</span>
       </div>
       <div>
         <span class="title">Available for claim</span>
         <span class="line"></span>
-        <span class="num">1000 GAGA</span>
+        <span class="num">0 GAGA</span>
       </div>
     </div>
     <router-link to="about" class="about-concat">

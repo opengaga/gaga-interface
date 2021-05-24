@@ -66,7 +66,7 @@
       </div>
     </div>
     <div class="foot-info">
-      <span> BlackCat, Inc. All rights reserved.</span>
+      <span> OpenGaga, Inc. All rights reserved.</span>
       <div class="text"><span>Terms</span> <span>Privacy</span></div>
       <div class="foot-imgs">
         <img src="@/assets/imgs/gaode.svg" alt="gaode" />

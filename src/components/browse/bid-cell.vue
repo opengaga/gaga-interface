@@ -1,11 +1,11 @@
 <template>
-  <div class="bid-cell">
+  <div class="bid-cell" @click="$router.push(`/bidInfo/${data?.token}/${data?.token_id}`)">
     <div class="cell-title">
       <div class="head-imgs">
         <img v-for="i in num" :key="i" src="@/assets/imgs/brandLogo.png" />
       </div>
       <a-dropdown :trigger="['click']" placement="bottomRight">
-        <span class="ant-dropdown-link" @click.prevent> ... </span>
+        <span class="ant-dropdown-link" @click.prevent.stop> ... </span>
         <template #overlay>
           <a-menu>
             <a-menu-item>
@@ -21,8 +21,12 @@
         </template>
       </a-dropdown>
     </div>
-    <div @click="$router.push(`/bidInfo/${data?.token}/${data?.token_id}`)">
-      <token-image class="cell-banner" :src="data?.prop_image || data?.user_cover" />
+    <div>
+      <token-image
+        class="cell-banner"
+        :preview="false"
+        :src="data?.prop_image || data?.user_cover"
+      />
     </div>
     <div class="cell-desc">
       <p class="bold500">{{ data?.prop_name || data?.user_name }}</p>
@@ -100,6 +104,8 @@
     padding: 10px 10px;
     border-radius: 8px;
     background: #fff;
+    cursor: pointer;
+
     .cell-title {
       display: flex;
       justify-content: space-between;

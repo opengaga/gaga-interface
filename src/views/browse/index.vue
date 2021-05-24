@@ -17,10 +17,10 @@
         <div class="item-title"> Hot bids <img src="@/assets/imgs/hotbids.svg" /> </div>
         <Bids />
       </div> -->
-      <div class="hotbids-wrap">
+      <!-- <div class="hotbids-wrap">
         <div class="item-title"> Hot collections <img src="@/assets/imgs/hotcollect.svg" /> </div>
         <Collections />
-      </div>
+      </div> -->
       <Expolre />
     </div>
   </div>
@@ -30,7 +30,7 @@
 </template>
 <script lang="ts">
   //import Bids from './bids.vue'
-  import Collections from './collections.vue'
+  // import Collections from './collections.vue'
   import { defineComponent, ref, watchEffect } from 'vue'
   import Expolre from './expolre.vue'
   import topsellers from './topsellers.vue'
@@ -44,7 +44,7 @@
     name: 'Browse',
     components: {
       //Bids,
-      Collections,
+      // Collections,
       Expolre,
       topsellers,
       placeBid,

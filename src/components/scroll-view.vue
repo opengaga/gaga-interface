@@ -1,5 +1,7 @@
 <template>
-  <div style="height: 1px" ref="ele" />
+  <div class="content" ref="ele">
+    <a-spin v-if="loading" size="large" />
+  </div>
 </template>
 <script lang="ts">
   import { useScroll } from '@/hooks/useScroll'
@@ -35,3 +37,12 @@
     }
   })
 </script>
+<style lang="scss" scoped>
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 1px;
+    padding: 20px;
+  }
+</style>

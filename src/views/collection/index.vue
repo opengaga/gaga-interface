@@ -58,7 +58,7 @@
         <div class="label"> Short url</div>
         <a-input
           class="wallet-input"
-          placeholder="rarible.com/ Enter short url"
+          placeholder="gaganft.vip/ Enter short url"
           type="text"
           v-model:value="formState.point"
         />
