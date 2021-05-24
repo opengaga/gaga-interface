@@ -140,6 +140,7 @@
   import { AssetType, SequenceOrderType } from '@/vvm/types'
   import Steps from '@/components/steps'
   import ApprovalForAllStep from '@/components/steps/ApprovalForAllStep'
+  import PurchaseStep from '@/components/steps/Purchase'
   import { deployments } from '@/vvm/constants'
   import MakeBid from './make-bid.vue'
 
@@ -154,6 +155,7 @@
       Steps,
       like,
       ApprovalForAllStep,
+      PurchaseStep,
       AddressCell,
       Checkout,
       MakeBid

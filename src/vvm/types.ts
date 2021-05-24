@@ -1,11 +1,11 @@
 import type { BigNumber } from '@ethersproject/bignumber'
 
 export enum AssetType {
-  ETH = 0,
-  ERC20 = 1,
-  ERC1155 = 2,
-  ERC721 = 3,
-  ERC721Deprecated = 4
+  ETH = 1,
+  ERC20 = 2,
+  ERC1155 = 3,
+  ERC721 = 4,
+  ERC721Deprecated = 5
 }
 
 export type Asset = {
