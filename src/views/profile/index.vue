@@ -32,7 +32,7 @@
           <input v-model="userModel.website" type="text" placeholder="https://" />
         </div>
         <a-button type="primary" shape="round" class="submit-btn" @click="updateUserInfo"
-          >Uapdate profile</a-button
+          >update profile</a-button
         >
       </div>
       <div class="form-avatar">
@@ -51,7 +51,7 @@
         >
           <a-button type="primary" shape="round">
             <upload-outlined></upload-outlined>
-            Click to Upload
+            click to upload
           </a-button>
         </a-upload>
       </div>
