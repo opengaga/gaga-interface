@@ -24,7 +24,7 @@
             </div>
           </div>
         </div>
-        <img src="@/assets/imgs/convert.svg" class="trans-btn" @click="toConvert('')" />
+        <img src="@/assets/imgs/convert.svg" class="trans-btn" @click="gotoSwap" />
       </div>
       <div class="account-link">
         <router-link to="/myItems"><img src="@/assets/imgs/item.svg" />My items</router-link>
@@ -39,7 +39,7 @@
   import { BigNumber } from '@ethersproject/bignumber'
   import { useErc20Balance } from '@/hooks/useBalance'
   import { defineComponent, ref, PropType } from 'vue'
-  import { tokens } from '@/utils/constants'
+  import { tokens, swapWethUrl } from '@/utils/constants'
   import { useWallet } from '@/hooks/useWallet'
   import { message } from 'ant-design-vue'
 
@@ -67,11 +67,16 @@
         message.success('copy success')
       }
 
+      const gotoSwap = () => {
+        window.open(swapWethUrl, '_blank')
+      }
+
       return {
         account,
         toConvert,
         wethBalance,
-        copyText
+        copyText,
+        gotoSwap
       }
     }
   })
