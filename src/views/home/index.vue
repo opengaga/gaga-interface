@@ -1,7 +1,7 @@
 <template>
   <div class="banner-wrap">
-    <div class="title">THE LARGEST NFT MARKETPLACE ON ZSC</div>
-    <div class="info">buy,sell,and discover rare digital items</div>
+    <div class="title">{{ $t('THE LARGEST NFT MARKETPLACE ON ZSC') }}</div>
+    <div class="info">{{ $t('buy,sell,and discover rare digital items') }}</div>
     <div class="btn-items">
       <router-link to="browse">{{ $t('Browse') }}</router-link>
       <router-link to="create">{{ $t('Create') }}</router-link>
