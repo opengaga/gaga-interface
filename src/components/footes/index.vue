@@ -69,11 +69,11 @@
       <span> OpenGaga, Inc. All rights reserved.</span>
       <div class="text"><span>Terms</span> <span>Privacy</span></div>
       <div class="foot-imgs">
-        <img src="@/assets/imgs/gaode.svg" alt="gaode" />
-        <img src="@/assets/imgs/twitter.svg" alt="twiter" />
-        <img src="@/assets/imgs/ins.svg" alt="ins" />
-        <img src="@/assets/imgs/games.svg" alt="game" />
-        <img src="@/assets/imgs/youtube.svg" alt="youtube" />
+        <a href=""><img src="@/assets/imgs/gaode.svg" alt="gaode" /></a>
+        <a href=""><img src="@/assets/imgs/twitter.svg" alt="twiter" /></a>
+        <a href=""><img src="@/assets/imgs/ins.svg" alt="ins" /></a>
+        <a href=""><img src="@/assets/imgs/games.svg" alt="game" /></a>
+        <a href=""><img src="@/assets/imgs/youtube.svg" alt="youtube" /></a>
       </div>
     </div>
   </footer>
