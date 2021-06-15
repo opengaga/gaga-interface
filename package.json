@@ -25,6 +25,7 @@
     "tiny-invariant": "^1.1.0",
     "tiny-warning": "^1.0.3",
     "vue": "next",
+    "vue-i18n": "next",
     "vue-router": "next",
     "vuex": "^4.0.0"
   },

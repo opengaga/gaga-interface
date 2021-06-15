@@ -9,7 +9,7 @@
         size="large"
         type="text"
         class="head-ipt"
-        placeholder="Search by creator, collectible or collection"
+        :placeholder="$t('searchPlaceholder')"
         v-model="searchValue"
       >
         <template #prefix>
@@ -20,11 +20,11 @@
     <ul class="lists">
       <li v-for="(item, index) in headerLists" :key="index">
         <a-dropdown v-if="item.children" :trigger="['click']" placement="bottomRight">
-          <a class="ant-dropdown-link">{{ item.name }}<DownOutlined /></a>
+          <a class="ant-dropdown-link">{{ $t(item.name) }}<DownOutlined /></a>
           <template #overlay>
             <a-menu>
               <a-menu-item v-for="({ name, link }, index) in item.children" :key="index">
-                <router-link :to="link">{{ name }}</router-link>
+                <router-link :to="link">{{ $t(name) }}</router-link>
               </a-menu-item>
               <!-- <div class="modal-imgs">
                 <img src="@/assets/imgs/gaode.svg" />
@@ -37,14 +37,14 @@
           </template>
         </a-dropdown>
         <router-link v-else active-class="selectedHeaderLink" :to="{ path: item.link }">
-          {{ item.name }}
+          {{ $t(item.name) }}
         </router-link>
       </li>
     </ul>
     <div class="btns-wrap">
       <a-space>
         <a-button shape="round" size="large" type="primary" @click="router.push('/create')">
-          Create
+          {{ $t('Create') }}
         </a-button>
         <div v-if="active" class="money-wrap" @click="showAccountModal = !showAccountModal">
           <span><format-balance :balance="balance" /></span>
@@ -54,7 +54,7 @@
           Network Error
         </a-button>
         <a-button shape="round" size="large" v-else type="ghost" @click="connect">
-          Connect wallet
+          {{ $t('Connect wallet') }}
         </a-button>
       </a-space>
     </div>

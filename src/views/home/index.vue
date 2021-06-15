@@ -3,36 +3,40 @@
     <div class="title">THE LARGEST NFT MARKETPLACE ON ZSC</div>
     <div class="info">buy,sell,and discover rare digital items</div>
     <div class="btn-items">
-      <router-link to="browse">Browse</router-link>
-      <router-link to="create">Create</router-link>
+      <router-link to="browse">{{ $t('Browse') }}</router-link>
+      <router-link to="create">{{ $t('Create') }}</router-link>
     </div>
   </div>
   <div class="account-wrap">
-    <div class="title">Meet GAGA-OpenGaga Governance Token</div>
+    <div class="title">{{ $t('Meet GAGA-OpenGaga Governance Token') }}</div>
     <div class="desc">
-      We think that the best way to align platform development with customers' interests is to
-      empower the ones who actively interact with protocol: creators and collectors
+      {{
+        $t(
+          "We think that the best way to align platform development with customers' interests is to empower the ones who actively interact with protocol: creators and collectors"
+        )
+      }}
     </div>
     <div class="connect-wrap" v-if="!active">
       <span class="text"
-        ><span class="cnt-text">Connect your wallet to</span> check your eligibility</span
+        ><span class="cnt-text">{{ $t('Connect your wallet') }}{{ $t('to') }}</span
+        >{{ $t('check your eligibility') }}</span
       >
-      <span class="link">Connect wallet</span>
+      <span class="link">{{ $t('Connect wallet') }}</span>
     </div>
     <div v-else class="connect-balance">
       <div>
-        <span class="title">Your Balance</span>
+        <span class="title">{{ $t('Your Balance') }}</span>
         <span class="line"></span>
         <span class="num">0 GAGA</span>
       </div>
       <div>
-        <span class="title">Available for claim</span>
+        <span class="title">{{ $t('Available for claim') }}</span>
         <span class="line"></span>
         <span class="num">0 GAGA</span>
       </div>
     </div>
     <router-link to="about" class="about-concat">
-      Learn more about GAGA token
+      {{ $t('Learn more about GAGA Token') }}
       <img class="anticon-right" src="@/assets/imgs/learn-arow.svg" alt="" />
     </router-link>
   </div>
