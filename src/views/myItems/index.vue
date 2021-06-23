@@ -20,7 +20,7 @@
       </div>
       <div class="myitems-links">
         <a-button v-if="isMine" shape="round" type="primary" size="large">
-          <router-link to="profile">Edit profile</router-link>
+          <router-link to="profile">{{ $t('Edit profile') }}</router-link>
         </a-button>
         <img @click="showShareModal = true" src="@/assets/imgs/link-icon.svg" />
         <img class="more" src="@/assets/imgs/more.svg" />
@@ -40,9 +40,9 @@
     </div>
     <div class="no-list" v-if="false">
       <p class="no-list-title">No items found</p>
-      <p class="no-list-desc"
-        >Come back soon! Or try to browse something for you on our marketplace</p
-      >
+      <p class="no-list-desc">{{
+        $t('Come back soon! Or try to browse something for you on our marketplace')
+      }}</p>
       <market-btn />
     </div>
     <a-row type="flex" class="item-card-wrap" :gutter="[16, 16]">
