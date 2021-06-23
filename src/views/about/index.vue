@@ -1,18 +1,18 @@
 <template>
   <div class="about-token">
     <img class="about-token-topimg" src="@/assets/imgs/expolre.svg" />
-    <p class="about-title">About GAGA Token</p>
-    <p class="headline">Who is eligible to participate in the airdrop?</p>
+    <p class="about-title">{{$t('About GAGA Token')}}</p>
+    <p class="headline">{{$t('Who is eligible to participate in the airdrop?')}}</p>
     <div class="headline-info">
       <list v-for="(item, idx) in arrList" :index="idx + 1" :ants="item" :key="idx" />
     </div>
     <div v-for="(items, idx) in howList" :key="idx">
-      <p class="icons-title">{{ items.title }}</p>
-      <div class="get-info" v-if="items.headline">{{ items.headline }} </div>
+      <p class="icons-title">{{ $t(items.title) }}</p>
+      <div class="get-info" v-if="items.headline">{{ $t(items.headline) }} </div>
       <div class="step-icons">
         <div class="step-item" v-for="(item, idx) in items.imgs" :key="idx"
           ><div class="step-img-wrap"><img :src="item.link" /></div
-          ><div class="desc">{{ item.name }}</div>
+          ><div class="desc">{{ $t(item.name) }}</div>
         </div>
       </div>
     </div>
