@@ -2,25 +2,26 @@
   <div class="profile-container">
     <div class="profile-wrap">
       <div class="profile-left">
-        <p class="title">Edit profile</p>
-        <p
-          >You can set preferred display name, create your branded profile URL and manage other
-          personal settings</p
-        >
+        <p class="title">{{ $t('Edit profile') }}</p>
+        <p>{{
+          $t(
+            'You can set preferred display name, create your branded profile URL and manage other personal settings'
+          )
+        }}</p>
         <div class="form-item">
-          <p class="name">Display name</p>
+          <p class="name">{{ $t('Display name') }}</p>
           <input v-model="userModel.username" type="text" placeholder="Enter an amount" />
         </div>
         <div class="form-item">
-          <p class="name">Custom URL</p>
+          <p class="name">{{ $t('Custom URL') }}</p>
           <input
             v-model="userModel.short_url"
             type="text"
-            placeholder="gaganft.vip / enter your custom URL"
+            placeholder="www.opengaga.io / enter your custom URL"
           />
         </div>
         <div class="form-item">
-          <p class="name">Bio</p>
+          <p class="name">{{ $t('Bio') }}</p>
           <input
             v-model="userModel.desc"
             type="text"
@@ -28,17 +29,17 @@
           />
         </div>
         <div class="form-item">
-          <p class="name">Personal site or portfolio</p>
+          <p class="name">{{ $t('Personal site or portfolio') }}</p>
           <input v-model="userModel.website" type="text" placeholder="https://" />
         </div>
-        <a-button type="primary" shape="round" class="submit-btn" @click="updateUserInfo"
-          >update profile</a-button
-        >
+        <a-button type="primary" shape="round" class="submit-btn" @click="updateUserInfo">{{
+          $t('Update profile')
+        }}</a-button>
       </div>
       <div class="form-avatar">
         <img v-if="imageUrl" class="avatar" :src="imageUrl" alt="avatar" />
         <img v-else class="avatar" src="@/assets/imgs/collect-avatar.png" alt="avatar" />
-        <p>We recommend an image of at least 400x400. Gifs work too.</p>
+        <p>{{ $t('We recommend an image of at least 400x400. Gifs work too.') }}</p>
         <a-upload
           v-model:file-list="fileList"
           name="avatar"
@@ -51,7 +52,7 @@
         >
           <a-button type="primary" shape="round">
             <upload-outlined></upload-outlined>
-            click to upload
+            {{ $t('Click to upload') }}
           </a-button>
         </a-upload>
       </div>
