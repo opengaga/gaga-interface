@@ -1,9 +1,9 @@
 <template>
   <div class="activity-cnt">
-    <p class="cnt-title"> Activity </p>
+    <p class="cnt-title">{{ $t('Activity') }}</p>
     <div class="content">
       <div class="filter-tags">
-        <p class="title">Filters</p>
+        <p class="title">{{ $t('Filters') }}</p>
         <div class="tags-wrap">
           <a-button
             v-for="item in tags"
@@ -27,9 +27,9 @@
           >
         </div>
         <div class="no-list" v-if="activities.length < 1">
-          <p class="title">Nothing yet</p>
-          <p class="desc">Activity will be shown here</p>
-          <marketBtn>Explore OpenGaga</marketBtn>
+          <p class="title">{{ $t('Nothing yet') }}</p>
+          <p class="desc">{{ $t('Activity will be shown here') }}</p>
+          <marketBtn>{{ $t('Explore BlackCat') }}</marketBtn>
         </div>
         <div class="list-items" v-else>
           <div class="list-item" v-for="(item, idx) in activities" :key="idx">
@@ -41,7 +41,7 @@
             <div class="item-info">
               <div class="name">{{ item.user_address }}</div>
               <div class="desc">
-                like by <img src="@/assets/imgs/b2.png" alt="" />
+                {{ $t('like by') }} <img src="@/assets/imgs/b2.png" alt="" />
                 <span class="user"> Aello bob </span>
               </div>
               <div class="time">{{ item.ac_time }}</div>
@@ -58,18 +58,21 @@
   import marketBtn from '@/components/backBtns/market-btn'
   import { useApi } from '@/hooks/useApi'
   import { Activity, ActivityType } from '@/api/types'
+  import { useI18n } from 'vue-i18n'
   export default defineComponent({
     name: 'activity',
     components: { HeartFilled, CheckOutlined, marketBtn },
     setup() {
+      const { t } = useI18n()
+
       const tags = ref<{ key: ActivityType; text: string }[]>([
         {
           key: ActivityType.follow,
-          text: 'Follows'
+          text: t('Follows')
         },
         {
           key: ActivityType.like,
-          text: 'Likes'
+          text: t('Likes')
         }
       ])
       const selectedTags = ref<ActivityType[]>([ActivityType.follow])
