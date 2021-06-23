@@ -1,28 +1,28 @@
 <template>
   <div class="form-list">
     <div class="file-wraps">
-      <div class="title">Upload file</div>
+      <div class="title">{{ $t('Upload file') }}</div>
       <upload-asset @file-change="fileChange" @preview-change="previewChange" />
     </div>
     <div class="form-item">
       <div class="form-item-left">
-        <div class="title">Put on sale</div>
-        <div class="info">You'll receive bids on this item</div>
+        <div class="title">{{ $t('Put on sale') }}</div>
+        <div class="info">{{ $t("You'll receive bids on this item") }}</div>
       </div>
       <div class="form-item-right"><a-switch v-model:checked="formState.sale" /></div>
     </div>
     <div class="form-item" v-if="formState.sale">
       <div class="form-item-left">
-        <div class="title">Instant sale price</div>
-        <div class="info">Enter the price for which the item will be instantly sold</div>
+        <div class="title">{{ $t('Instant sale price') }}</div>
+        <div class="info">{{ $t('enterPrice') }}</div>
       </div>
       <div class="form-item-right"><a-switch v-model:checked="formState.hasPrice" /></div>
     </div>
     <div class="form-item" v-if="formState.sale && formState.hasPrice">
       <div class="form-item-left">
-        <div class="title">Price</div>
+        <div class="title">{{ $t('Price') }}</div>
         <a-input-number
-          :min="0"
+          :min="100"
           class="wallet-input"
           placeholder="Sale Price"
           v-model:value="formState.price"
@@ -32,11 +32,12 @@
     </div>
     <div class="form-item">
       <div class="form-item-left">
-        <div class="title">Unlock once purchased</div>
-        <div class="info">Content will be unlocked after successful transaction</div>
+        <div class="title">{{ $t('Unlock once purchased') }}</div>
+        <div class="info">{{ $t('Content will be unlocked after successful transaction') }}</div>
       </div>
       <div class="form-item-right"><a-switch v-model:checked="formState.purchase" /></div>
     </div>
+    <!--
     <div class="form-item">
       <div class="form-item-left">
         <div>Choose collection</div>
@@ -48,12 +49,13 @@
       </div>
       <div class="form-item-right"></div>
     </div>
+    -->
     <div class="form-item">
       <div class="form-item-left">
-        <div>Name</div>
+        <div>{{ $t('Name') }}</div>
         <a-input
           class="wallet-input"
-          placeholder='e.g."Redeemable T-Shirt with logo"'
+          :placeholder="$t('nameplaceholder')"
           type="text"
           v-model:value="formState.name"
         />
@@ -62,11 +64,10 @@
     </div>
     <div class="form-item">
       <div class="form-item-left">
-        <div> Description (Optional)</div>
+        <div> {{ $t('Description (Optional)') }}</div>
         <a-input
           class="wallet-input"
-          placeholder='e.g."After purchasing you"ll be able to get the
-            real T-Shirt'
+          :placeholder="$t('descPlaceholder')"
           type="text"
           v-model:value="formState.desc"
         />
@@ -75,7 +76,7 @@
     </div>
     <div v-if="isMulti" class="form-item">
       <div class="form-item-left">
-        <div>Supply</div>
+        <div>{{ $t('Supply') }}</div>
         <a-input-number
           :min="1"
           class="wallet-input"
@@ -87,7 +88,7 @@
     </div>
     <div class="form-item">
       <div class="form-item-left">
-        <div>Royalties</div>
+        <div>{{ $t('Royalties') }}</div>
         <a-input-number
           :min="0"
           class="wallet-input"
@@ -99,7 +100,7 @@
     </div>
     <div class="form-item">
       <div class="form-item-left">
-        <div>Properties (Optional)</div>
+        <div>{{ $t('Properties (Optional)') }}</div>
         <div
           class="wallet-propeties"
           v-for="(property, index) of formState.properties"
@@ -128,21 +129,21 @@
       size="large"
       @click="$emit('submit')"
     >
-      Create item
+      {{ $t('Create item') }}
     </enable-button>
-    <span class="wallet-status-btn">unsaved changes</span>
+    <span class="wallet-status-btn">{{ $t('unsaved changes') }}</span>
   </div>
 </template>
 <script lang="ts">
   import { defineComponent, PropType, reactive, watchEffect } from 'vue'
-  import { PlusCircleFilled } from '@ant-design/icons-vue'
+  // import { PlusCircleFilled } from '@ant-design/icons-vue'
   import UploadAsset from '../upload/upload-asset.vue'
   import { FormState } from './types'
   import EnableButton from '../button/enable-button'
 
   export default defineComponent({
     name: 'MintForm',
-    components: { PlusCircleFilled, UploadAsset, EnableButton },
+    components: { UploadAsset, EnableButton },
     props: {
       isMulti: Boolean,
       state: {
@@ -202,7 +203,7 @@
       .form-item-left {
         width: 330px;
         .title {
-          color: #246cf6;
+          color: $fontIconBtn;
           font-weight: bold;
           margin-bottom: 10px;
         }

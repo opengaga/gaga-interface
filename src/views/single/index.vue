@@ -1,25 +1,28 @@
 <template>
   <div class="collectible-wrap">
     <back-btns text="Manage collectible type" link="create" />
-    <div class="page-title">Create single collectible</div>
+    <div class="page-title">{{ $t('Create single collectible') }}</div>
     <div class="single-wrap">
       <mint-form :isMulti="false" :state="form" @submit="submit" />
       <div class="preview-wrap">
-        <div class="preview-title">Preview</div>
+        <div class="preview-title">{{ $t('Preview') }}</div>
         <div class="preview-info">
           <div v-if="form.preview">
             <img class="logo" src="@/assets/imgs/brandLogo.png" />
             <img class="preview-img" :src="form.preview" />
-            <div><span class="bold600">Auction</span> <span class="opa05">1 of 1</span></div>
-            <div class="wallet-bid">Place a bid</div>
+            <div
+              ><span class="bold600">{{ $t('Auction') }}</span>
+              <span class="opa05">1 of 1</span></div
+            >
+            <div class="wallet-bid">{{ $t('Place a bid') }}</div>
           </div>
-          <div v-else> Preview of your new collectible </div>
+          <div v-else> {{ $t('Preview of your new collectible') }} </div>
         </div>
       </div>
     </div>
     <a-modal
       :visible="visible"
-      title="Follow steps"
+      :title="$t('Follow steps')"
       :footer="null"
       :maskClosable="false"
       :destroyOnClose="true"
