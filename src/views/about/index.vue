@@ -83,15 +83,12 @@
         {
           title: 'Existing OpenGaga users',
           time: '15/07/2020',
-          desc: `Active users will receive 2% of the total GAGA supply according to the Liquidity Mining
-            principle: based on the previous volume on OpenGaga marketplace. Both buyers and sellers
-            will receive 50%.`
+          desc: `Active users will receive 2% of the total GAGA supply according to the Liquidity Mining principle: based on the previous volume on BlackCat marketplace. Both buyers and sellers will receive 50%.`
         },
         {
           title: 'Documented NFT holders/buyers',
           time: 'by Monday 20/07/2020',
-          desc: `In this stage, 4% will be distributed amoung Ethereum addresses of all NFTs with
-            documented sales on Dune Analytics.`
+          desc: `In this stage, 4% will be distributed amoung Ethereum addresses of all NFTs with documented sales on Dune Analytics.`
         },
         {
           title: 'Remaining NFT owners',
