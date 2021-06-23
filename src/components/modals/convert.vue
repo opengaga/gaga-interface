@@ -70,9 +70,8 @@
       }
       const swap = async () => {
         loading.value = true
-        return (side.value === 1
-          ? deposit(Number(amount.value))
-          : withdraw(parseEther(amount.value))
+        return (
+          side.value === 1 ? deposit(Number(amount.value)) : withdraw(parseEther(amount.value))
         ).finally(() => {
           loading.value = false
         })

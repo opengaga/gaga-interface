@@ -51,16 +51,16 @@
       <span> OpenGaga, Inc. All rights reserved.</span>
       <div class="text"><span>Terms</span> <span>Privacy</span></div>
       <div class="foot-imgs">
-        <a href="https://t.me/opengaga"
-          ><img src="@/assets/imgs/gaode.svg" alt="telegram"
-        /></a>
+        <a href="https://t.me/opengaga"><img src="@/assets/imgs/gaode.svg" alt="telegram" /></a>
         <a href="https://twitter.com/nftblackcat/status/1382499472459014153?s=21"
           ><img src="@/assets/imgs/twitter.svg" alt="twiter"
         /></a>
         <a href="https://www.instagram.com/opengaga.nft/"
           ><img src="@/assets/imgs/ins.svg" alt="ins"
         /></a>
-        <a href="https://discord.com/channels/856379437544767548/856379437544767551"><img src="@/assets/imgs/games.svg" alt="game" /></a>
+        <a href="https://discord.com/channels/856379437544767548/856379437544767551"
+          ><img src="@/assets/imgs/games.svg" alt="game"
+        /></a>
         <a href="https://www.youtube.com/channel/UChIQ1h4Kw0-y0JNKL0feHxw"
           ><img src="@/assets/imgs/youtube.svg" alt="youtube"
         /></a>

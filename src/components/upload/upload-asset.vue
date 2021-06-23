@@ -61,7 +61,7 @@
     text-align: center;
     font-size: 12px;
     color: #8d8d8d;
-    border: 1px solid $fontIconBtn;
+    border: 1px solid #fff;
     position: relative;
     .file-selector-type {
       position: absolute;
