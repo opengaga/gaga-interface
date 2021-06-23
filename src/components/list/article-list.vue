@@ -2,9 +2,9 @@
   <div class="item">
     <span class="item-span">{{ props.index }}</span>
     <div class="item-right">
-      <div class="item-title">{{ props.ants.title }}</div>
+      <div class="item-title">{{ $t(props.ants.title) }}</div>
       <div class="item-time">{{ props.ants.time }}</div>
-      <div class="item-desc">{{ props.ants.desc }}</div>
+      <div class="item-desc">{{ $t(props.ants.desc) }}</div>
     </div>
   </div>
 </template>
