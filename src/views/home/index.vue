@@ -96,7 +96,7 @@
 
       const claim = async () => {
         const recipient = account?.value
-        const value = available.value
+        const value = total.value
 
         if (recipient && value) {
           const { signature } = await api.getClaimSignature({ address: recipient })
