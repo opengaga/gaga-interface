@@ -21,7 +21,7 @@
         ><span class="cnt-text">{{ $t('Connect your wallet') }}{{ $t('to') }}</span
         >{{ $t('check your eligibility') }}</span
       >
-      <span class="link">{{ $t('Connect wallet') }}</span>
+      <span class="link" @click="connect">{{ $t('Connect wallet') }}</span>
     </div>
     <div v-else class="connect-balance">
       <div>
@@ -38,7 +38,7 @@
           <format-balance :balance="available" :address="address" />
         </span>
       </div>
-      <enable-button type="primary" @click="claim">Claim</enable-button>
+      <enable-button size="large" type="primary" @click="claim">Claim</enable-button>
     </div>
     <router-link to="about" class="about-concat">
       {{ $t('Learn more about GAGA Token') }}
@@ -56,15 +56,15 @@
   import { useErc20Balance } from '@/hooks/useBalance'
   import { useVVM } from '@/hooks/useVVM'
   import EnableButton from '@/components/button/enable-button'
+  import { injectedConnector } from '@/connectors'
 
   export default defineComponent({
     name: 'home',
     components: { convert, EnableButton },
     setup() {
-      const { active } = useWallet()
+      const { active, account, activate } = useWallet()
       const showConvert = ref<boolean>(false)
       const api = useApi()
-      const { account } = useWallet()
       const total = ref<BigNumber | null>(null)
       const vvm = useVVM()
 
@@ -105,6 +105,10 @@
         }
       }
 
+      const connect = () => {
+        activate?.(injectedConnector)
+      }
+
       return {
         available,
         balance,
@@ -112,7 +116,8 @@
         claim,
         onSearch,
         active,
-        showConvert
+        showConvert,
+        connect
       }
     }
   })
