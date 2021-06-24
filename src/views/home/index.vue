@@ -69,6 +69,7 @@
       const vvm = useVVM()
 
       const balance = useErc20Balance(ref(vvm.tokenAddress), account)
+      const claimed = ref<BigNumber | null>(null)
 
       watchEffect(() => {
         const address = account?.value
@@ -77,9 +78,16 @@
           api.getClaim({ address }).then((res) => (total.value = BigNumber.from(res.data.total)))
         }
       })
+      watchEffect(() => {
+        const address = account?.value
+
+        if (address) {
+          vvm.miner.claimed(address).then((_claimed) => (claimed.value = _claimed))
+        }
+      })
 
       const available = computed(() =>
-        total.value && balance.value ? total.value.sub(balance.value) : BigNumber.from('0')
+        total.value && claimed.value ? total.value.sub(claimed.value) : BigNumber.from('0')
       )
 
       const onSearch = (e: unknown) => {
