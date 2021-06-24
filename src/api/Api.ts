@@ -256,6 +256,20 @@ export class Api extends Request {
       }
     })
   }
+
+  // get miner claim signature
+  async getClaimSignature(params: { address: string }) {
+    return this.get<ServerResponse<{ signature: string }>>('/miner/claim', {
+      params
+    })
+  }
+
+  // get miner claim amount
+  async getClaim(params: { address: string }) {
+    return this.get<ServerResponse<{ data: { total: number } }>>('/user/balance', {
+      params
+    })
+  }
 }
 
 export class ApiNode extends Request {

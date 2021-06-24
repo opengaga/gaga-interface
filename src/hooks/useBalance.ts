@@ -1,7 +1,7 @@
 import { useBlockNumber } from '@/state/application/hooks'
 import { ERC20 } from '@/vvm/contracts/ERC20'
 import { BigNumber } from '@ethersproject/bignumber'
-import { ref, Ref, watch, watchEffect } from '@vue/runtime-core'
+import { ref, Ref, watchEffect } from '@vue/runtime-core'
 import { useWallet } from './useWallet'
 
 export const useBalance = (account?: Ref<string | null | undefined>) => {

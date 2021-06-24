@@ -27,13 +27,18 @@
       <div>
         <span class="title">{{ $t('Your Balance') }}</span>
         <span class="line"></span>
-        <span class="num">0 GAGA</span>
+        <span class="num">
+          <format-balance :balance="balance" :address="address" />
+        </span>
       </div>
       <div>
         <span class="title">{{ $t('Available for claim') }}</span>
         <span class="line"></span>
-        <span class="num">0 GAGA</span>
+        <span class="num">
+          <format-balance :balance="available" :address="address" />
+        </span>
       </div>
+      <enable-button type="primary" @click="claim">Claim</enable-button>
     </div>
     <router-link to="about" class="about-concat">
       {{ $t('Learn more about GAGA Token') }}
@@ -43,20 +48,72 @@
   <convert @closeConvert="showConvert = false" v-if="showConvert" />
 </template>
 <script lang="ts">
-  import { defineComponent, ref } from 'vue'
+  import { computed, defineComponent, ref, watchEffect } from 'vue'
   import { useWallet } from '@/hooks/useWallet'
   import convert from '@/components/modals/convert.vue'
+  import { useApi } from '@/hooks/useApi'
+  import { BigNumber } from '@ethersproject/bignumber'
+  import { useErc20Balance } from '@/hooks/useBalance'
+  import { useVVM } from '@/hooks/useVVM'
+  import EnableButton from '@/components/button/enable-button'
+
   export default defineComponent({
     name: 'home',
-    components: { convert },
+    components: { convert, EnableButton },
     setup() {
       const { active } = useWallet()
       const showConvert = ref<boolean>(false)
+      const api = useApi()
+      const { account } = useWallet()
+      const total = ref<BigNumber | null>(null)
+      const vvm = useVVM()
+
+      const balance = useErc20Balance(ref(vvm.tokenAddress), account)
+
+      watchEffect(() => {
+        const address = account?.value
+
+        if (address) {
+          api.getClaim({ address }).then((res) => (total.value = BigNumber.from(res.data.total)))
+        }
+      })
+
+      const available = computed(() =>
+        total.value && balance.value ? total.value.sub(balance.value) : BigNumber.from('0')
+      )
 
       const onSearch = (e: unknown) => {
         console.log(e)
       }
-      return { onSearch, active, showConvert }
+
+      const claim = async () => {
+        const recipient = account?.value
+        const value = available.value
+
+        if (recipient && value) {
+          const { signature } = await api.getClaimSignature({ address: recipient })
+
+          return vvm.miner.claim(
+            [
+              {
+                recipient,
+                value
+              }
+            ],
+            signature
+          )
+        }
+      }
+
+      return {
+        available,
+        balance,
+        address: vvm.tokenAddress,
+        claim,
+        onSearch,
+        active,
+        showConvert
+      }
     }
   })
 </script>

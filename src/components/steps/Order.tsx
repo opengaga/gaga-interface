@@ -53,7 +53,7 @@ const OrderStep = defineComponent({
           props.sellAsset,
           props.buyAsset,
           BigNumber.from(props.supply),
-          props.price,
+          props.price.mul(props.supply),
           randomHex(32)
         )
         const signature = await order.sign(signer)

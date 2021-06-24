@@ -12,15 +12,21 @@ import { VVMToken } from './contracts/VVMToken'
 import { MintableToken } from './contracts/MintabeToken'
 import { ExchangeV1 } from './contracts/ExchangeV1'
 import Order from './Order'
+import { Miner } from './contracts/Miner'
+import { ERC20 } from './contracts/ERC20'
 
 class VVM {
   public erc20TransferProxyAddress: string
   public transferProxyAddress: string
   public transferProxyForDeprecatedAddress: string
+  public tokenAddress: string
 
   public vvmToken: VVMToken
   public mintableToken: MintableToken
   public exchangeV1: ExchangeV1
+  public token: ERC20
+
+  public miner: Miner
 
   public provider: Provider
 
@@ -30,16 +36,21 @@ class VVM {
     this.erc20TransferProxyAddress = deployments.ERC20TransferProxy
     this.transferProxyAddress = deployments.TransferProxy
     this.transferProxyForDeprecatedAddress = deployments.TransferProxyForDeprecated
+    this.tokenAddress = deployments.Token
 
     this.vvmToken = new VVMToken(deployments.VVMToken, _provider)
     this.mintableToken = new MintableToken(deployments.MintableToken, _provider)
     this.exchangeV1 = new ExchangeV1(deployments.ExchangeV1, _provider)
+    this.token = new ERC20(deployments.Token, _provider)
+
+    this.miner = new Miner(_provider)
   }
 
   connect(signerOrProvider: Signer | Provider): void {
     this.vvmToken.connect(signerOrProvider)
     this.mintableToken.connect(signerOrProvider)
     this.exchangeV1.connect(signerOrProvider)
+    this.miner.connect(signerOrProvider)
   }
 
   public async approve(
