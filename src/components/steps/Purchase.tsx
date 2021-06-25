@@ -1,6 +1,6 @@
 import type { TransactionResponse } from '@ethersproject/providers'
 
-import { useApi, useApiNode } from '@/hooks/useApi'
+import { useApi } from '@/hooks/useApi'
 import { Button } from 'ant-design-vue'
 import { defineComponent, inject, PropType, Ref, ref } from 'vue'
 import { useWallet } from '@/hooks/useWallet'
@@ -50,7 +50,6 @@ const PurchaseStep = defineComponent({
     const transaction = ref<TransactionResponse>()
 
     const { account, getSigner } = useWallet()
-    const apiNode = useApiNode()
     const api = useApi()
     const vvm = useVVM()
 
@@ -62,7 +61,7 @@ const PurchaseStep = defineComponent({
 
       const order = Order.parse(props.order)
 
-      const buyerFee = await apiNode.getBuyerFee({
+      const buyerFee = await api.getBuyerFee({
         token: props.token,
         token_id: props.tokenId
       })

@@ -270,17 +270,6 @@ export class Api extends Request {
       params
     })
   }
-}
-
-export class ApiNode extends Request {
-  constructor(baseURL: string, config: Config = {}) {
-    super(
-      baseURL,
-      combineConfig(config, {
-        mode: 'cors'
-      })
-    )
-  }
 
   // get buyer fee
   async getBuyerFee(params: { token: string; token_id: string }) {
