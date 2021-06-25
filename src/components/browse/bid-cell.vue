@@ -12,7 +12,7 @@
               <a href="javascript:;" @click="showPlaceBid">Place a bid</a>
             </a-menu-item>
             <a-menu-item>
-              <a href="javascript:;" @click="showPurchase">View on BlackCat</a>
+              <a href="javascript:;" @click="showPurchase">View on OpenGAGA</a>
             </a-menu-item>
             <a-menu-item>
               <a href="javascript:;" @click="showReport">Report</a>
