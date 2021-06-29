@@ -42,11 +42,7 @@ export const checkStatus = async (response: Response): Promise<Response> => {
   if (response.status >= 200 && response.status < 300) {
     return response
   } else {
-    if (response.status === 401) {
-      throw await response.json()
-    } else {
-      throw await response.json()
-    }
+    throw new Error(JSON.stringify(await response.json()))
   }
 }
 

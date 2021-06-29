@@ -1,5 +1,5 @@
 import { useApprove } from '@/hooks/useApprove'
-import { Button } from 'ant-design-vue'
+import { Button, Alert } from 'ant-design-vue'
 import { defineComponent, inject, Ref, ref, watchEffect } from 'vue'
 
 const ApprovalForAllStep = defineComponent({
@@ -43,6 +43,7 @@ const ApprovalForAllStep = defineComponent({
         <div>
           <h3>Approve</h3>
           <p>Checking balance and approving</p>
+          {error.value && <Alert message={error.value?.message || 'Error'} showIcon />}
         </div>
         <Button
           size="large"

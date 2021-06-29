@@ -4,7 +4,7 @@ import { useApi } from '@/hooks/useApi'
 import { useVVM } from '@/hooks/useVVM'
 import { deployments } from '@/vvm/constants'
 import { BigNumber } from '@ethersproject/bignumber'
-import { Button } from 'ant-design-vue'
+import { Button, Alert } from 'ant-design-vue'
 import { computed, defineComponent, inject, PropType, Ref, ref, unref } from 'vue'
 import { useWallet } from '@/hooks/useWallet'
 import { assert } from '@/utils/assert'
@@ -178,6 +178,7 @@ const MintStep = defineComponent({
         <div>
           <h3>Upload files & Mint token</h3>
           <p>Call contract method</p>
+          {error.value && <Alert message={error.value?.message || 'Error'} showIcon />}
         </div>
         <Button
           size="large"

@@ -12,7 +12,7 @@ export const useMintForm = () => {
   const form = reactive<FormState>({
     sale: false,
     hasPrice: false,
-    price: 0,
+    price: 100,
     purchase: false,
     file: new Blob(),
     preview: '',

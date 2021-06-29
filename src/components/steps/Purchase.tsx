@@ -1,7 +1,7 @@
 import type { TransactionResponse } from '@ethersproject/providers'
 
 import { useApi } from '@/hooks/useApi'
-import { Button } from 'ant-design-vue'
+import { Button, Alert } from 'ant-design-vue'
 import { defineComponent, inject, PropType, Ref, ref } from 'vue'
 import { useWallet } from '@/hooks/useWallet'
 import { assert } from '@/utils/assert'
@@ -110,6 +110,7 @@ const PurchaseStep = defineComponent({
         <div>
           <h3>Sign sell order</h3>
           <p>Sign sell order using your wallet</p>
+          {error.value && <Alert message={error.value?.message || 'Error'} showIcon />}
         </div>
         <Button
           size="large"
