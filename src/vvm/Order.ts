@@ -6,7 +6,7 @@ import { keccak256 } from '@ethersproject/keccak256'
 import { Signer } from 'ethers'
 import { randomHex } from '@/utils/crypto'
 
-const defaultFee = BigNumber.from(250)
+const defaultFee = BigNumber.from(100)
 
 export const AssetTypeComponents = [
   {

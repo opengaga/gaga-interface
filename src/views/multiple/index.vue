@@ -41,7 +41,7 @@
           @done="mintDone"
         />
         <order-step
-          v-if="form.sale"
+          v-if="form.hasPrice"
           :supply="form.supply"
           :sellAsset="sellAsset"
           :buyAsset="buyAsset"

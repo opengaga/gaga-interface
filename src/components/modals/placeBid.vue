@@ -42,7 +42,6 @@
   import { useWallet } from '@/hooks/useWallet'
   import { useErc20Balance } from '@/hooks/useBalance'
   import { parseUnits } from '@ethersproject/units'
-  import { assert } from '@/utils/assert'
   import { Asset, AssetType } from '@/vvm/types'
 
   export default defineComponent({
@@ -51,19 +50,23 @@
       name: String
     },
     setup(props, context) {
-      const price = ref<string>()
+      const price = ref<string>('600')
       const amount = ref<string>('1')
       const decimals = ref<number>(18)
       const address = ref<string>(tokens.weth)
       const { account } = useWallet()
       const balance = useErc20Balance(address, account)
 
-      const bidAmount = computed(() => parseUnits(price.value || '0', decimals.value))
+      const bidAmount = computed(() => parseUnits(price.value, decimals.value))
       const cost = computed(() => {
         return BigNumber.from(amount.value || '0').mul(bidAmount.value)
       })
 
       const error = computed(() => {
+        if (Number(price.value) < 600) {
+          return new Error('Min bid is 600')
+        }
+
         if (!amount.value || !amount.value) {
           return new Error('Please input bid and quantity')
         }

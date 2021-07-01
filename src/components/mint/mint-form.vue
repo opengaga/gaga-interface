@@ -11,14 +11,14 @@
       </div>
       <div class="form-item-right"><a-switch v-model:checked="formState.sale" /></div>
     </div>
-    <!-- <div class="form-item" v-if="formState.sale">
+    <div class="form-item" v-if="formState.sale">
       <div class="form-item-left">
         <div class="title">{{ $t('Instant sale price') }}</div>
         <div class="info">{{ $t('enterPrice') }}</div>
       </div>
       <div class="form-item-right"><a-switch v-model:checked="formState.hasPrice" /></div>
-    </div> -->
-    <div class="form-item" v-if="formState.sale">
+    </div>
+    <div class="form-item" v-if="formState.sale && formState.hasPrice">
       <div class="form-item-left">
         <div class="title">{{ $t('Price') }}</div>
         <a-input-number
