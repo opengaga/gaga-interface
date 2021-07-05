@@ -34,7 +34,11 @@ const MintStep = defineComponent({
       type: String,
       default: '1'
     },
-    fee: Number
+    fee: Number,
+    sale: {
+      type: Boolean,
+      required: true
+    }
   },
   setup(props, context) {
     const finishStep = inject<Ref<number>>('steps-finished', ref(0))
@@ -159,6 +163,16 @@ const MintStep = defineComponent({
 
         if (status !== 1) {
           throw new Error('Transaction error')
+        }
+
+        assert(tokenId.value)
+
+        if (props.sale) {
+          await api.changeSale({
+            token: props.multiple ? deployments.VVMToken : deployments.MintableToken,
+            token_id: tokenId.value,
+            sale: 1
+          })
         }
 
         error.value = null

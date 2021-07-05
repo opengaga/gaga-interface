@@ -79,7 +79,7 @@
               Place a bid
             </span>
             <span v-if="!!owner && info && !order && isMine" @click="showOrder = true" class="btn">
-              Make Order
+              Sell
             </span>
             <span
               v-if="!!owner && info && order && signature && !isMine"

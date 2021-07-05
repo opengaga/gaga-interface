@@ -38,6 +38,7 @@
           :multiple="false"
           :supply="form.supply"
           :fee="form.point"
+          :sale="form.sale"
           @done="mintDone"
         />
         <order-step
