@@ -85,12 +85,12 @@ export type UserInfo = ServerResponse<{
 }>
 // item
 export type ItemType = {
-  asset_id: AssetType.ERC1155
+  asset_id: AssetType.ERC1155 | AssetType.ERC721
   asset_type: string
   blacklisted: string | null
   coin_id: number
   coin_name: string
-  coll_id: AssetType.ERC1155
+  coll_id: AssetType.ERC1155 | AssetType.ERC721
   coll_name: string
   contract_addr: string | null
   create_time: string

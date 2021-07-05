@@ -75,9 +75,14 @@
         </a-tabs>
         <div class="bid-bottom">
           <div class="bid-bottom-btns">
-            <span v-if="!!owner && info" @click="showBid = true" class="btn">Place a bid</span>
+            <span v-if="!!owner && info && !isMine" @click="showBid = true" class="btn">
+              Place a bid
+            </span>
+            <span v-if="!!owner && info && !order && isMine" @click="showOrder = true" class="btn">
+              Make Order
+            </span>
             <span
-              v-if="!!owner && info && order && signature"
+              v-if="!!owner && info && order && signature && !isMine"
               class="btn"
               @click="showCheckout = true"
             >
@@ -122,6 +127,13 @@
     :info="info"
     @close="showBid = false"
   />
+  <MakeOrder
+    v-if="showOrder && tokenAddress && tokenId && info"
+    :tokenAddress="tokenAddress"
+    :tokenId="tokenId"
+    :info="info"
+    @close="showOrder = false"
+  />
 </template>
 <script lang="ts">
   import like from '@/components/like/index.vue'
@@ -143,6 +155,8 @@
   import PurchaseStep from '@/components/steps/Purchase'
   import { deployments } from '@/vvm/constants'
   import MakeBid from './make-bid.vue'
+  import MakeOrder from './make-order.vue'
+  import { useWallet } from '@/hooks/useWallet'
 
   export default defineComponent({
     name: 'bidInfo',
@@ -158,7 +172,8 @@
       PurchaseStep,
       AddressCell,
       Checkout,
-      MakeBid
+      MakeBid,
+      MakeOrder
     },
     setup() {
       const activeKey = ref<string>('1')
@@ -193,6 +208,7 @@
       const showSteps = ref<boolean>(false)
       const showCheckout = ref<boolean>(false)
       const showBid = ref<boolean>(false)
+      const showOrder = ref<boolean>(false)
       const info = ref<ItemType>()
       const api = useApi()
       const route = useRoute()
@@ -205,6 +221,7 @@
       const signature = ref<string | null>(null)
       const amount = ref<string | null>(null)
       const bids = ref<Bid[]>([])
+      const { account } = useWallet()
 
       const params = computed(() => {
         return route.params as {
@@ -218,6 +235,8 @@
         () =>
           params.value.seller || (owners.value.length === 1 ? owners.value[0].user_address : null)
       )
+
+      const isMine = computed(() => owner.value === account?.value)
 
       watchEffect(() => {
         if (tokenAddress.value && tokenId.value) {
@@ -278,7 +297,6 @@
         }
       })
 
-      //const { account } = useWallet()
       const { description, attributes } = useTokenURI(tokenAddress, tokenId, assetType)
 
       const done = () => {
@@ -294,6 +312,7 @@
       return {
         showSteps,
         showCheckout,
+        showOrder,
         showBid,
         activeKey,
         fullscreen,
@@ -313,7 +332,8 @@
         submitCheckout,
         tokenId,
         tokenAddress,
-        bids
+        bids,
+        isMine
       }
     }
   })
