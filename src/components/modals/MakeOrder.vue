@@ -1,5 +1,5 @@
 <template>
-  <mask-layer title="Make order" @closeBid="close" @confirm="submit">
+  <mask-layer title="Make order" @closeBid="close" @confirm="submit" confirmBtn="Sell">
     <div class="pay-num"> You are about to make a order for {{ name }}</div>
     <div class="boldFont bid-ipt-title">Make order</div>
     <div class="bnb-iptwrap">
