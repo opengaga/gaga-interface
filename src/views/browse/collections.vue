@@ -6,8 +6,8 @@
           <img class="right-arow" src="@/assets/imgs/learn-arow.svg" alt="" />
         </div>
       </template>
-      <div v-for="(items, idx) in collectionList" :key="idx">
-        <collect-cell v-for="(item, index) in items" :collect="item" :key="index" />
+      <div>
+        <collect-cell v-for="item in collectionList" :collect="item" :key="item.create_time" />
       </div>
     </a-carousel>
   </div>

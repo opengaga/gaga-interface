@@ -22,6 +22,7 @@
     },
     components: { tokenImage },
     setup(props) {
+      console.log(props)
       return { props }
     }
   })
