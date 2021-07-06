@@ -1,10 +1,10 @@
 <template>
   <div class="collect-cell">
-    <token-image :src="props.collect.coll_cover" class="cell-banner"></token-image>
-    <token-image class="cell-avatar" :src="props.collect.user_cover" />
+    <token-image :src="props.collect.prop_image" class="cell-banner"></token-image>
+    <token-image class="cell-avatar" :src="props.collect.own_user_cover" />
     <div class="cell-desc">
-      <div class="name bold500">{{ props.collect.user_name }}</div>
-      <div class="text">{{ props.collect.coll_type }}</div>
+      <div class="name bold500">{{ props.collect.prop_name }}</div>
+      <div class="text">{{ props.collect.asset_type }}</div>
     </div>
   </div>
 </template>

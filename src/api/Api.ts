@@ -108,7 +108,7 @@ export class Api extends Request {
   }
   // collection top
   async collectionTop() {
-    return this.get('/collection/top')
+    return this.get('/explore/list_top')
   }
   // hot collection
   async getHotCollection(
