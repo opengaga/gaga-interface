@@ -1,5 +1,8 @@
 <template>
-  <div class="collect-cell">
+  <div
+    class="collect-cell"
+    @click="$router.push(`/bidInfo/${props.collect?.token}/${props.collect?.token_id}`)"
+  >
     <token-image :src="props.collect.prop_image" class="cell-banner"></token-image>
     <token-image class="cell-avatar" :src="props.collect.own_user_cover" />
     <div class="cell-desc">
