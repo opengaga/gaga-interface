@@ -13,7 +13,7 @@
     </div>
     <div class="sellers-wrap">
       <div class="hotbids-wrap">
-        <div class="item-title"> Hot collections <img src="@/assets/imgs/hotcollect.svg" /> </div>
+        <div class="item-title"> Hot Recommend <img src="@/assets/imgs/hotcollect.svg" /> </div>
         <Collections />
       </div>
       <topsellers />
