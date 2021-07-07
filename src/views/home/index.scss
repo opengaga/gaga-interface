@@ -86,7 +86,7 @@ $border: 1px solid rgba(187, 187, 187, 100);
     border-left: 3px solid #4768ff;
   }
   .btn-items {
-    margin-top: 70px;
+    margin-top: 30px;
     display: flex;
     justify-content: flex-start;
     a {
@@ -142,7 +142,7 @@ $border: 1px solid rgba(187, 187, 187, 100);
       display: inline-block;
       color: $globalBackground;
       background: $fontIconBtn;
-      padding: 4px 30px;
+      padding: 4px 24px;
       border-radius: 30px;
       margin: 0 10px;
       box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.35);
@@ -181,7 +181,7 @@ $border: 1px solid rgba(187, 187, 187, 100);
     border: 2px solid #fff;
     color: #fff;
     font-size: 20px;
-    padding: 0 30px;
+    padding: 0 26px;
     line-height: 50px;
     display: inline-block;
     margin: auto;

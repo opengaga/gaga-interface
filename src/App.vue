@@ -125,6 +125,7 @@
   @media screen and (max-width: 768px) {
     .website-container {
       width: 536px;
+      min-height: auto;
     }
   }
   @media screen and (max-width: 576px) {
