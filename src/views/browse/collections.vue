@@ -1,35 +1,39 @@
 <template>
   <div class="collect-wrap">
-    <a-carousel arrows>
-      <template #nextArrow>
-        <div class="custom-slick-arrow">
-          <img class="right-arow" src="@/assets/imgs/learn-arow.svg" alt="" />
-        </div>
-      </template>
-      <div>
-        <collect-cell v-for="item in collectionList" :collect="item" :key="item.create_time" />
-      </div>
-    </a-carousel>
+    <a-row type="flex" class="expolre-cnt" :gutter="[16, 16]">
+      <a-col
+        v-for="(item, idx) in list"
+        :key="idx"
+        :xs="24"
+        :sm="12"
+        :md="8"
+        :lg="6"
+        :xl="4"
+        :xxl="4"
+      >
+        <bid-cell :data="item" />
+      </a-col>
+    </a-row>
   </div>
 </template>
 <script lang="ts">
   import { defineComponent, ref, onMounted, onUnmounted } from 'vue'
-  import collectCell from '@/components/browse/collect-cell.vue'
   import { useCarsoul } from '@/hooks/useCarsoul'
   import { useApi } from '@/hooks/useApi'
+  import bidCell from '@/components/browse/bid-cell.vue'
 
   export default defineComponent({
-    components: { collectCell },
+    components: { bidCell },
     setup() {
       const listArray = new Array(10)
-      let collectionList: any = ref([])
+      let list: any = ref([])
       let width = ref(0)
       const api = useApi()
       api
         .collectionTop()
         .then((res: any) => {
           if (res.list) {
-            collectionList.value = res.list
+            list.value = res.list
           }
         })
         .catch((err) => {
@@ -38,9 +42,9 @@
       const onResize = () => {
         width.value = document.body.offsetWidth
         if (width.value > 750) {
-          collectionList.value = useCarsoul(listArray, 5)
+          list.value = useCarsoul(listArray, 5)
         } else {
-          collectionList.value = useCarsoul(listArray, 3)
+          list.value = useCarsoul(listArray, 3)
         }
       }
 
@@ -54,7 +58,7 @@
       })
 
       return {
-        collectionList
+        list
       }
     }
   })

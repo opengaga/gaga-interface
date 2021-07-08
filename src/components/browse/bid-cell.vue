@@ -128,10 +128,15 @@
         }
       }
     }
+    .ant-image {
+      width: 100%;
+    }
     .cell-banner {
       width: 100%;
       height: 140px;
       margin: 8px auto;
+      object-fit: cover;
+      object-position: center;
     }
     .cell-desc {
       font-size: 12px;
