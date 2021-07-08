@@ -45,7 +45,7 @@ const FormatBalance = defineComponent({
       if (props.address) {
         return tokenSymbol.value
       } else {
-        return symbol
+        return props.symbol || symbol
       }
     })
 

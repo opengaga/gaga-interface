@@ -109,7 +109,6 @@
     :showFoot="false"
   >
     <steps @done="done">
-      <approval-for-all-step :operator="operator" :address="address" />
       <purchase-step
         :tokenId="info.token_id"
         :token="info.token"
@@ -151,9 +150,7 @@
   import { useTokenURI } from '@/hooks/useTokenURI'
   import { AssetType, SequenceOrderType } from '@/vvm/types'
   import Steps from '@/components/steps'
-  import ApprovalForAllStep from '@/components/steps/ApprovalForAllStep'
   import PurchaseStep from '@/components/steps/Purchase'
-  import { deployments } from '@/vvm/constants'
   import MakeBid from './make-bid.vue'
   import MakeOrder from './make-order.vue'
   import { useWallet } from '@/hooks/useWallet'
@@ -168,7 +165,6 @@
       ReadMore,
       Steps,
       like,
-      ApprovalForAllStep,
       PurchaseStep,
       AddressCell,
       Checkout,
@@ -320,8 +316,6 @@
         info,
         description,
         owners,
-        operator: deployments.TransferProxy,
-        address: deployments.VVMToken,
         owner,
         ownerInfo,
         attributes,
