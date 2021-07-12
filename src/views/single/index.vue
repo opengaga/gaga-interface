@@ -43,10 +43,10 @@
         />
         <order-step
           v-if="form.hasPrice"
-          :supply="form.supply"
+          :selling="form.supply"
           :sellAsset="sellAsset"
           :buyAsset="buyAsset"
-          :price="price"
+          :buying="price"
         />
       </steps>
     </a-modal>
@@ -79,7 +79,7 @@
 
       const mintDone = (_tokenId: string) => {
         tokenId.value = _tokenId
-        price.value = parseEther(form.price + '')
+        price.value = parseEther(form.price + '').mul(BigNumber.from(form.supply))
         buyAsset.value = {
           token: EMPTY_ADDRESS,
           tokenId: BigNumber.from(0),

@@ -4,10 +4,10 @@
     <steps @done="done">
       <approve-step :spender="spender" :address="address" />
       <order-step
-        :supply="sellAmount"
+        :selling="sellAmount"
         :sellAsset="sellAsset"
         :buyAsset="buyAsset"
-        :price="buyAmount"
+        :buying="buyAmount"
         :isBid="true"
       />
     </steps>

@@ -4,10 +4,10 @@
     <steps @done="done">
       <approval-for-all-step :operator="operator" :address="address" />
       <order-step
-        :supply="sellAmount"
+        :selling="sellAmount"
         :sellAsset="sellAsset"
         :buyAsset="buyAsset"
-        :price="buyAmount"
+        :buying="buyAmount"
       />
     </steps>
   </mask-layer>
@@ -75,7 +75,7 @@
           tokenId: BigNumber.from(props.tokenId),
           assetType: props.info.asset_id
         }
-        buyAmount.value = parseEther(_price)
+        buyAmount.value = parseEther(_price).mul(sellAmount.value)
 
         showSteps.value = true
       }

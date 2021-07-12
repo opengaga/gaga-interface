@@ -17,8 +17,8 @@ const OrderStep = defineComponent({
     },
     sellAsset: Object as PropType<Asset>,
     buyAsset: Object as PropType<Asset>,
-    price: Object as PropType<BigNumber>,
-    supply: {
+    buying: Object as PropType<BigNumber>,
+    selling: {
       type: [String, Object] as PropType<string | BigNumber>,
       default: '1'
     },
@@ -46,14 +46,14 @@ const OrderStep = defineComponent({
         assert(account?.value)
         assert(props.sellAsset)
         assert(props.buyAsset)
-        assert(props.price)
+        assert(props.buying)
 
         const order = new Order(
           account.value,
           props.sellAsset,
           props.buyAsset,
-          BigNumber.from(props.supply),
-          props.price.mul(props.supply),
+          BigNumber.from(props.selling),
+          BigNumber.from(props.buying),
           randomHex(32)
         )
         const signature = await order.sign(signer)

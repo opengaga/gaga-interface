@@ -108,8 +108,8 @@ const PurchaseStep = defineComponent({
     return () => (
       <div>
         <div>
-          <h3>Sign sell order</h3>
-          <p>Sign sell order using your wallet</p>
+          <h3>Buy asset</h3>
+          <p>Sign transaction using your wallet</p>
           {error.value && <Alert message={error.value?.message || 'Error'} showIcon />}
         </div>
         <Button
