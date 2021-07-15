@@ -23,6 +23,7 @@ import type {
 
 import { Request, combineConfig, combineURL } from './request'
 import { toFormData } from './utils'
+import { SequenceOrderType } from '@/vvm/types'
 
 export class Api extends Request {
   constructor(baseURL: string, config: Config = {}, version = 'v1', _lang = 'en') {
@@ -230,6 +231,13 @@ export class Api extends Request {
     })
   }
 
+  // bid handler
+  async bid(body: { tx_id: string }) {
+    return this.post<ServerResponse<undefined>>('/bids/tx_id', {
+      body: toFormData(body)
+    })
+  }
+
   // get activity list
   async getActivityList(params: { filters: ActivityType[]; address?: string }) {
     return this.get<GetActivityListResponse>('/activity/list', {
@@ -272,12 +280,12 @@ export class Api extends Request {
   }
 
   // get buyer fee
-  async getBuyerFee(params: { token: string; token_id: string }) {
-    return this.get<
+  async getBuyerFee(body: { order: SequenceOrderType }) {
+    return this.post<
       ServerResponse<{
         buyFee: number
-        buyFeeSignature: string
+        signature: string
       }>
-    >('/chain/prepare/buyerfeemessage', { params })
+    >('/chain/prepare/ordermessage', { body })
   }
 }

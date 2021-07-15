@@ -27,7 +27,7 @@
         <div class="headline">
           <span class="name"><format-balance :balance="info?.price" /></span>
           <span>US2,523.22</span>
-          <span v-if="ownerInfo">{{ ownerInfo.own_supply }} of {{ info?.supply }}</span>
+          <span v-if="ownerInfo">{{ ownerInfo.own_supply_sell }} of {{ info?.supply }}</span>
         </div>
         <div class="icons">
           <a-button shape="round" type="primary">
@@ -64,20 +64,22 @@
           <a-tab-pane class="pane" key="3" tab="Details">
             <token-detail :owner="owner" :attributes="attributes" />
           </a-tab-pane>
-          <a-tab-pane class="pane" key="4" tab="Bids">
+          <a-tab-pane class="pane" key="4" tab="Bids" v-if="bids.length > 0">
             <bid-card
               v-for="(item, idx) of bids"
               :key="idx"
               :user="item.bid_user_address"
               :balance="item.bid_price"
+              :orderData="item.bid_data"
+              :address="tokenAddress"
+              :tokenId="tokenId"
+              :info="info"
             />
           </a-tab-pane>
         </a-tabs>
         <div class="bid-bottom">
           <div class="bid-bottom-btns">
-            <span v-if="!!owner && info && !isMine" @click="showBid = true" class="btn">
-              Place a bid
-            </span>
+            <span v-if="!!info" @click="showBid = true" class="btn">Place a bid</span>
             <span v-if="!!owner && info && !order && isMine" @click="showOrder = true" class="btn">
               Sell
             </span>
@@ -109,14 +111,7 @@
     :showFoot="false"
   >
     <steps @done="done">
-      <purchase-step
-        :tokenId="info.token_id"
-        :token="info.token"
-        :address="owner"
-        :order="order"
-        :amount="amount"
-        :signature="signature"
-      />
+      <purchase-step :order="order" :amount="amount" :signature="signature" />
     </steps>
   </mask-layer>
   <MakeBid
@@ -135,6 +130,8 @@
   />
 </template>
 <script lang="ts">
+  /* eslint-disable vue/no-unused-components */
+
   import like from '@/components/like/index.vue'
   import maskLayer from '@/components/modals/maskLayer.vue'
   import Checkout from '@/components/modals/checkout.vue'

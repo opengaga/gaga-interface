@@ -17,18 +17,6 @@ const PurchaseStep = defineComponent({
       type: Number,
       required: true
     },
-    token: {
-      type: String,
-      required: true
-    },
-    tokenId: {
-      type: String,
-      required: true
-    },
-    address: {
-      type: String,
-      required: true
-    },
     order: {
       type: Object as PropType<SequenceOrderType>,
       required: true
@@ -40,6 +28,11 @@ const PurchaseStep = defineComponent({
     amount: {
       type: String,
       required: true
+    },
+    isBid: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   setup(props) {
@@ -61,16 +54,13 @@ const PurchaseStep = defineComponent({
 
       const order = Order.parse(props.order)
 
-      const buyerFee = await api.getBuyerFee({
-        token: props.token,
-        token_id: props.tokenId
-      })
+      const buyerFee = await api.getBuyerFee({ order: order.sequence() })
 
       transaction.value = await vvm.exchange(
         order,
         props.signature,
         BigNumber.from(buyerFee.buyFee),
-        buyerFee.buyFeeSignature,
+        buyerFee.signature,
         BigNumber.from(props.amount),
         account.value
       )
@@ -79,7 +69,11 @@ const PurchaseStep = defineComponent({
     const buy = async () => {
       assert(transaction.value)
 
-      await api.buy({ tx_id: transaction.value.hash })
+      if (props.isBid) {
+        await api.bid({ tx_id: transaction.value.hash })
+      } else {
+        await api.buy({ tx_id: transaction.value.hash })
+      }
     }
 
     const start = async () => {

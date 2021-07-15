@@ -107,9 +107,10 @@ export type ItemType = {
   price: string
   prop_image: string
   prop_name: string
-  saleable: boolean
+  saleable: number
   sellers: string | null
   supply: string
+  supply_sell: string
   token: string
   token_id: string
   total_stock: null
@@ -173,6 +174,7 @@ export type Owner = {
   item_id: number
   own_id: number
   own_supply: number
+  own_supply_sell: number
   own_time: string
   user_address: string
   user_cover: null
@@ -188,6 +190,7 @@ export type OwnerInfo = {
   item_id: number
   own_id: number
   own_supply: number
+  own_supply_sell: number
   own_time: string
   sale_coin: string
   sale_coin_id: AssetType

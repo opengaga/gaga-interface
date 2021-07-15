@@ -22,15 +22,11 @@
       </a-dropdown>
     </div>
     <div>
-      <token-image
-        class="cell-banner"
-        :preview="false"
-        :src="data?.prop_image || data?.user_cover"
-      />
+      <token-image class="cell-banner" :preview="false" :src="data.prop_image" />
     </div>
     <div class="cell-desc">
-      <p class="bold500">{{ data?.prop_name || data?.user_name }}</p>
-      <p><span class="bold500">Action</span> 1 of 1</p>
+      <p class="bold500">{{ data.prop_name }}</p>
+      <p><span class="bold500">Action</span> {{ data.supply }} of {{ data.supply }}</p>
       <div class="desc-bottom">
         <span v-if="data?.price">
           Price
@@ -38,7 +34,7 @@
             <format-balance :balance="data.price" />
           </span>
         </span>
-        <span v-else-if="data?.saleable === 1">
+        <span v-else-if="data.saleable">
           <a>Place a bid</a>
         </span>
         <span v-else>Not sell</span>
@@ -48,19 +44,20 @@
   </div>
 </template>
 <script lang="ts">
-  import { computed, defineComponent } from 'vue'
+  import { computed, defineComponent, PropType } from 'vue'
   import bus from '@/bus'
   import like from '@/components/like/index.vue'
   import TokenImage from '../image/token-image'
   //import { ItemType } from '@/api/types'
 
   import FormatBalance from '@/components/format/FormatBalance'
+  import { ItemType } from '@/api/types'
 
   export default defineComponent({
     props: {
       data: {
-        type: Object as any,
-        required: false
+        type: Object as PropType<ItemType>,
+        required: true
       }
     },
     components: {

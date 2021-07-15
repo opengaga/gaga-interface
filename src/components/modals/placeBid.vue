@@ -102,8 +102,6 @@
         context.emit('submit', sellAsset, sellAmount, buyAmount)
       }
 
-      console.log(wrapperSymbol)
-
       return {
         close,
         wrapperSymbol,
