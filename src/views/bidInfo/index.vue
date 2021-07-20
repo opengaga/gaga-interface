@@ -80,7 +80,7 @@
         <div class="bid-bottom">
           <div class="bid-bottom-btns">
             <span v-if="!!info" @click="showBid = true" class="btn">Place a bid</span>
-            <span v-if="!!owner && info && !order && isMine" @click="showOrder = true" class="btn">
+            <span v-if="!!owner && info && !order && myHas" @click="showOrder = true" class="btn">
               Sell
             </span>
             <span
@@ -151,6 +151,10 @@
   import MakeBid from './make-bid.vue'
   import MakeOrder from './make-order.vue'
   import { useWallet } from '@/hooks/useWallet'
+  import { useBlockNumber } from '@/state/application/hooks'
+  import { ERC721 } from '@/vvm/contracts/ERC721'
+  import { ERC1155 } from '@/vvm/contracts/ERC1155'
+  import { BigNumber } from '@ethersproject/bignumber'
 
   export default defineComponent({
     name: 'bidInfo',
@@ -198,6 +202,7 @@
           ele.webkitRequestFullScreen()
         }
       }
+      const blockNumber = useBlockNumber()
       const showSteps = ref<boolean>(false)
       const showCheckout = ref<boolean>(false)
       const showBid = ref<boolean>(false)
@@ -214,7 +219,8 @@
       const signature = ref<string | null>(null)
       const amount = ref<string | null>(null)
       const bids = ref<Bid[]>([])
-      const { account } = useWallet()
+      const { account, getProvider } = useWallet()
+      const myHas = ref<boolean>(false)
 
       const params = computed(() => {
         return route.params as {
@@ -230,6 +236,33 @@
       )
 
       const isMine = computed(() => owner.value === account?.value)
+
+      watchEffect(() => {
+        blockNumber?.value
+        if (!info.value || !tokenAddress.value || !tokenId.value || !account?.value) return
+
+        const provider = getProvider()
+
+        if (info.value.asset_id === AssetType.ERC721) {
+          const erc721 = new ERC721(tokenAddress.value, provider, '')
+
+          erc721
+            .ownerOf(BigNumber.from(tokenId.value))
+            .then((data) => {
+              myHas.value = data === account.value
+            })
+            .catch(console.error)
+        } else {
+          const erc1155 = new ERC1155(tokenAddress.value, provider)
+
+          erc1155
+            .balanceOf(account.value, BigNumber.from(tokenId.value))
+            .then((data) => {
+              myHas.value = data.toNumber() > 0
+            })
+            .catch(console.error)
+        }
+      })
 
       watchEffect(() => {
         if (tokenAddress.value && tokenId.value) {
@@ -308,6 +341,7 @@
         showOrder,
         showBid,
         activeKey,
+        myHas,
         fullscreen,
         bidinfos,
         info,
