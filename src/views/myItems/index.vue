@@ -97,6 +97,9 @@
         },
         {
           name: 'follow'
+        },
+        {
+          name: 'own'
         }
       ])
       const closeModal = () => {
@@ -146,7 +149,11 @@
 
       watchEffect(() => {
         if (!address.value) return
-        api.getItemsList({ address: address.value, filter: selectedTag.value }).then((res: any) => {
+        let name = selectedTag.value
+        if (name === 'own') {
+          name = 'owner'
+        }
+        api.getItemsList({ address: address.value, filter: name }).then((res: any) => {
           list.value = res.list
         })
       })
