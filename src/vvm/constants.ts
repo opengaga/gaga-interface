@@ -5,6 +5,6 @@ export const deployments = {
   TransferProxy: '0x7152E69aa222912ED17e92df5Db94eCc1c5D0445',
   TransferProxyForDeprecated: '0x99cda64b0F126C697d6f7Ae86DD98a1BD9d19aA5',
   ERC20TransferProxy: '0xCb9eA30ad6C6a6e293C8dBE28a9495e994AeAe1a',
-  Miner: '0x1986A101BD9433b11d183Ca88F189E119dD4753A',
-  Token: '0x7F6d6e98CB3872B27ecb144113112A166A8ccD9A'
+  Miner: '0xeff10f1a0a3dbd2b6bf7d668cfaec3e978e18bcf',
+  Token: '0x434A8a6ae2Ec90BB08ec46B91d0A3d85D99e65d3'
 }
