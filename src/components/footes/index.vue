@@ -52,7 +52,7 @@
       <div class="text"><span>Terms</span> <span>Privacy</span></div>
       <div class="foot-imgs">
         <a href="https://t.me/opengaga"><img src="@/assets/imgs/gaode.svg" alt="telegram" /></a>
-        <a href="https://twitter.com/nftblackcat/status/1382499472459014153?s=21"
+        <a href="https://twitter.com/opengaga"
           ><img src="@/assets/imgs/twitter.svg" alt="twiter"
         /></a>
         <a href="https://www.instagram.com/opengaga.nft/"
